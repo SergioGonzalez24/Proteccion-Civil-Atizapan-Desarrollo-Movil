@@ -1,4 +1,4 @@
-package mx.itesm.jmggm.atizapan
+package mx.itesm.jmggm.atizapan.viewmodel
 
 import androidx.lifecycle.ViewModel
 
