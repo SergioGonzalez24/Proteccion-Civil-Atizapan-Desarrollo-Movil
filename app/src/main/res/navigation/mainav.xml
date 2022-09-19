@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFrag"
-        android:name="mx.itesm.jmggm.atizapan.MainFrag"
+        android:name="mx.itesm.jmggm.atizapan.model.MainFrag"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapPolice"
-        android:name="mx.itesm.jmggm.atizapan.mapPolice"
+        android:name="mx.itesm.jmggm.atizapan.view.mapPolice"
         android:label="fragment_map_police"
         tools:layout="@layout/fragment_map_police" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapFire"
-        android:name="mx.itesm.jmggm.atizapan.mapFire"
+        android:name="mx.itesm.jmggm.atizapan.view.mapFire"
         android:label="fragment_map_fire"
         tools:layout="@layout/fragment_map_fire" >
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapRedCross"
-        android:name="mx.itesm.jmggm.atizapan.mapRedCross"
+        android:name="mx.itesm.jmggm.atizapan.view.mapRedCross"
         android:label="fragment_map_red_cross"
         tools:layout="@layout/fragment_map_red_cross" >
         <action
@@ -85,7 +85,7 @@
     </fragment>
     <fragment
         android:id="@+id/settings"
-        android:name="mx.itesm.jmggm.atizapan.settings"
+        android:name="mx.itesm.jmggm.atizapan.view.settings"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/directory"
-        android:name="mx.itesm.jmggm.atizapan.directory"
+        android:name="mx.itesm.jmggm.atizapan.view.directory"
         android:label="fragment_directory"
         tools:layout="@layout/fragment_directory" >
         <action
@@ -118,7 +118,7 @@
     </fragment>
     <fragment
         android:id="@+id/news"
-        android:name="mx.itesm.jmggm.atizapan.news"
+        android:name="mx.itesm.jmggm.atizapan.view.news"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" >
         <action
@@ -133,7 +133,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeLoading"
-        android:name="mx.itesm.jmggm.atizapan.welcomeLoading"
+        android:name="mx.itesm.jmggm.atizapan.view.welcomeLoading"
         android:label="fragment_welcome_loading"
         tools:layout="@layout/fragment_welcome_loading" >
         <action
