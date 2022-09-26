@@ -60,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Emergencia"
+            android:backgroundTint="#FF0000"
             android:textColor="#FFFFFF"
             app:iconTint="#92B73A74" />
     </LinearLayout>
