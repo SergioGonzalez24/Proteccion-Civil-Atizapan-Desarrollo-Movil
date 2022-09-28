@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_mainFrag_to_settings"
             app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_mainFrag_to_signInFrag"
+            app:destination="@id/signInFrag" />
+        <action
+            android:id="@+id/action_mainFrag_to_logInFrag"
+            app:destination="@id/logInFrag" />
     </fragment>
     <fragment
         android:id="@+id/mapPolice"
@@ -138,6 +144,24 @@
         tools:layout="@layout/fragment_welcome_loading" >
         <action
             android:id="@+id/action_welcomeLoading_to_mainFrag"
+            app:destination="@id/mainFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFrag"
+        android:name="mx.itesm.jmggm.atizapan.SignInFrag"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFrag_to_mainFrag"
+            app:destination="@id/mainFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFrag"
+        android:name="mx.itesm.jmggm.atizapan.logInFrag"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFrag_to_mainFrag"
             app:destination="@id/mainFrag" />
     </fragment>
 </navigation>
