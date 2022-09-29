@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class MainFrag : Fragment(R.layout.fragment_main) {
-
+class directoryFragment : Fragment(R.layout.fragment_directory) {
 
 
 }

@@ -91,7 +91,7 @@
     </fragment>
     <fragment
         android:id="@+id/settings"
-        android:name="mx.itesm.jmggm.atizapan.settings"
+        android:name="mx.itesm.jmggm.atizapan.settingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -106,7 +106,7 @@
     </fragment>
     <fragment
         android:id="@+id/directory"
-        android:name="mx.itesm.jmggm.atizapan.directory"
+        android:name="mx.itesm.jmggm.atizapan.directoryFragment"
         android:label="fragment_directory"
         tools:layout="@layout/fragment_directory" >
         <action
@@ -124,7 +124,7 @@
     </fragment>
     <fragment
         android:id="@+id/news"
-        android:name="mx.itesm.jmggm.atizapan.news"
+        android:name="mx.itesm.jmggm.atizapan.newsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" >
         <action

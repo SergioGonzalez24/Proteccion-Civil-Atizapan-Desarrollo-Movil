@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class MainFrag : Fragment(R.layout.fragment_main) {
-
-
+class newsFragment : Fragment(R.layout.fragment_news) {
 
 }
