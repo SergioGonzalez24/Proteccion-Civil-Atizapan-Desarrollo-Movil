@@ -60,8 +60,6 @@
             android:id="@+id/btnEmergencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FF0000"
-            android:backgroundTint="#FF0000"
             android:text="Emergencia"
             android:textColor="#FFFFFF"
             app:iconTint="#92B73A74" />

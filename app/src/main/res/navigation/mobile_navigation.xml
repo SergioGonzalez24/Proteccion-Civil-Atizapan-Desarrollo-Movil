@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mainFrag">
+
+    <fragment
+        android:id="@+id/mainFrag"
+        android:name="mx.itesm.jmggm.atizapan.MainFrag"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFrag_to_logInFrag"
+            app:destination="@id/logInFrag" />
+        <action
+            android:id="@+id/action_mainFrag_to_signInFrag"
+            app:destination="@id/signInFrag" />
+        <action
+            android:id="@+id/action_mainFrag_to_mapRedCross"
+            app:destination="@id/mapRedCross" />
+        <action
+            android:id="@+id/action_mainFrag_to_mapFire"
+            app:destination="@id/mapFire" />
+        <action
+            android:id="@+id/action_mainFrag_to_mapPolice"
+            app:destination="@id/mapPolice" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="mx.itesm.jmggm.atizapan.settingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <argument
+            android:name="tipoConfig"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/directoryFragment"
+        android:name="mx.itesm.jmggm.atizapan.directoryFragment"
+        android:label="fragment_directory"
+        tools:layout="@layout/fragment_directory" >
+        <argument
+            android:name="tipoDirectorio"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="mx.itesm.jmggm.atizapan.newsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <argument
+            android:name="tipoNoticias"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFrag"
+        android:name="mx.itesm.jmggm.atizapan.logInFrag"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" />
+    <fragment
+        android:id="@+id/mapPolice"
+        android:name="mx.itesm.jmggm.atizapan.mapPolice"
+        android:label="fragment_map_police"
+        tools:layout="@layout/fragment_map_police" />
+    <fragment
+        android:id="@+id/signInFrag"
+        android:name="mx.itesm.jmggm.atizapan.SignInFrag"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/mapFire"
+        android:name="mx.itesm.jmggm.atizapan.mapFire"
+        android:label="fragment_map_fire"
+        tools:layout="@layout/fragment_map_fire" />
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="mx.itesm.jmggm.atizapan.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
+    <fragment
+        android:id="@+id/mapRedCross"
+        android:name="mx.itesm.jmggm.atizapan.mapRedCross"
+        android:label="fragment_map_red_cross"
+        tools:layout="@layout/fragment_map_red_cross" />
+</navigation>
