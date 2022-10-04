@@ -14,10 +14,6 @@
         android:theme="@style/Theme.Atizapan"
         tools:targetApi="31" >
         <activity
-            android:name=".MenuPrincipal"
-            android:exported="false"
-            android:label="@string/title_activity_menu_principal" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
@@ -27,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MenuPrincipal"
+            android:exported="true"
+            android:label="@string/title_activity_menu_principal" />
+
 
     </application>
 
