@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.189" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_splash2.xml" value="0.25" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_directory.xml" value="0.25" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_log_in.xml" value="0.25" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_main.xml" value="0.25" />
@@ -15,6 +17,7 @@
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_welcome_loading.xml" value="0.25" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/splash_screen.xml" value="0.24895833333333334" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/menu/bottom_menu.xml" value="0.24895833333333334" />
       </map>
     </option>
