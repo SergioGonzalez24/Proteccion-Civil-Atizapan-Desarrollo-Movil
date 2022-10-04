@@ -18,7 +18,7 @@
             android:exported="false"
             android:label="@string/title_activity_menu_principal" />
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
             <intent-filter>
@@ -27,9 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
     </application>
 
 </manifest>
