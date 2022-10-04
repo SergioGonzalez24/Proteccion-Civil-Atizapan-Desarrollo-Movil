@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import mx.itesm.jmggm.atizapan.view.MainFrag
 
 class SplashActivity : AppCompatActivity() {
     lateinit var handler: Handler
@@ -15,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         handler = Handler()
 
         handler.postDelayed({
-            val intent = Intent(this, MenuPrincipal::class.java)
+            val intent = Intent(this, MainFrag::class.java)
             startActivity(intent)
             finish()
         },3000)

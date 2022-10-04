@@ -73,11 +73,6 @@
         android:name="mx.itesm.jmggm.atizapan.view.mapFire"
         android:label="fragment_map_fire"
         tools:layout="@layout/fragment_map_fire" />
-    <activity
-        android:id="@+id/splashActivity"
-        android:name="mx.itesm.jmggm.atizapan.view.SplashActivity"
-        android:label="activity_splash"
-        tools:layout="@layout/activity_splash" />
     <fragment
         android:id="@+id/mapRedCross"
         android:name="mx.itesm.jmggm.atizapan.view.mapRedCross"
