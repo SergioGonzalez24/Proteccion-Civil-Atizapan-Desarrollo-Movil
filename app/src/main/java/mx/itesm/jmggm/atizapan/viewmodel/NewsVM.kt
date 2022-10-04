@@ -1,7 +1,7 @@
-package mx.itesm.jmggm.atizapan
+package mx.itesm.jmggm.atizapan.viewmodel
 
 import androidx.lifecycle.ViewModel
 
-class MainVM : ViewModel() {
+class NewsVM : ViewModel() {
     // TODO: Implement the ViewModel
 }

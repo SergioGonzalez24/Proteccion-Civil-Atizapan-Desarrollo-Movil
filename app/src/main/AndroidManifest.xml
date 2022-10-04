@@ -18,7 +18,7 @@
             android:exported="false"
             android:label="@string/title_activity_menu_principal" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
             <intent-filter>

@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInFrag">
+    tools:context=".view.SignInFrag">
 
 
     <ImageView
@@ -27,58 +27,13 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <EditText
-            android:id="@+id/editNombreLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            tools:text="Nombre de usuario" />
-
-        <EditText
-            android:id="@+id/editEmailLogin"
+            android:id="@+id/editEmailSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
             android:textAlignment="center"
             tools:text="Email" />
-
-        <EditText
-            android:id="@+id/editNombreLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            tools:text="Nombre Completo" />
-
-        <EditText
-            android:id="@+id/editDireccionLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            tools:text="Direccion" />
-
-        <EditText
-            android:id="@+id/editTelefonoLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            tools:text="Telefono" />
-
-        <EditText
-            android:id="@+id/editCPLogin6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            tools:text="Codigo Postal" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

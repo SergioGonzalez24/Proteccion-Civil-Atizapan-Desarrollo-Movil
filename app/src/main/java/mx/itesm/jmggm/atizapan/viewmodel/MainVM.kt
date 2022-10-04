@@ -1,7 +1,7 @@
-package mx.itesm.jmggm.atizapan
+package mx.itesm.jmggm.atizapan.viewmodel
 
 import androidx.lifecycle.ViewModel
 
-class DirectoryVM : ViewModel() {
+class MainVM : ViewModel() {
     // TODO: Implement the ViewModel
 }

@@ -27,10 +27,10 @@ class MenuPrincipal : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 // id elementos menu que se necesiten
-                R.id.navigation_menu,
-                R.id.navigation_home,
-                R.id.navigation_dashboard,
-                R.id.navigation_notifications
+                R.id.mainFrag,
+                R.id.newsFragment,
+                R.id.directoryFragment,
+                R.id.settingsFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
