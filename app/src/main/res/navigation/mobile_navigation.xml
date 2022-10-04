@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mainFrag2">
+
+    <fragment
+        android:id="@+id/mainFrag2"
+        android:name="mx.itesm.jmggm.atizapan.MainFrag"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFrag2_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_mainFrag2_to_directoryFragment"
+            app:destination="@id/directoryFragment" />
+        <action
+            android:id="@+id/action_mainFrag2_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="mx.itesm.jmggm.atizapan.settingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <argument
+            android:name="tipoConfig"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/directoryFragment"
+        android:name="mx.itesm.jmggm.atizapan.directoryFragment"
+        android:label="fragment_directory"
+        tools:layout="@layout/fragment_directory" >
+        <argument
+            android:name="tipoDirectorio"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="mx.itesm.jmggm.atizapan.newsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <argument
+            android:name="tipoNoticias"
+            app:argType="string" />
+    </fragment>
+</navigation>
