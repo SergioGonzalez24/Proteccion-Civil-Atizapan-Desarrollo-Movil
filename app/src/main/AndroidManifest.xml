@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MenuPrincipal"
+            android:name=".BottomMenu"
             android:exported="true"
             android:label="@string/title_activity_menu_principal" />
 

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/mainFrag"
+        android:id="@+id/mainFragment"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Menu" />
+        android:title="Inicio" />
     <item
         android:id="@+id/newsFragment"
         android:icon="@drawable/news"
-        android:title="News" />
+        android:title="Noticias" />
     <item
         android:id="@+id/directoryFragment"
-        android:icon="@drawable/directorio"
-        android:title="Directory" />
+        android:icon="@android:drawable/stat_sys_phone_call"
+        android:title="Directorio" />
     <item
-        android:id="@+id/settingsFragments"
+        android:id="@+id/settingsFragment"
         android:icon="@drawable/gear"
-        android:title="Settings" />
+        android:title="Configuracion" />
 </menu>
