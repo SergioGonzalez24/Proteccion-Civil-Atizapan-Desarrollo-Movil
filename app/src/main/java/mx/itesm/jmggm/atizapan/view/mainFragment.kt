@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+//import com.google.android.gms.location.FusedLocationProviderClient
+//import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
-import mx.itesm.jmggm.atizapan.mainFragmentDirections
+//import mx.itesm.jmggm.atizapan.mainFragmentDirections
 import mx.itesm.jmggm.atizapan.viewmodel.mainVM
 
 
@@ -24,7 +26,19 @@ class mainFragment : Fragment() {
 
     private val viewModel:mainVM by viewModels()
     private lateinit var binding: FragmentMainBinding
+    /*
+    // Código para solicitar permiso de usar la ubicación
+    private val CODIGO_PERMISO_GPS = 200
 
+    // Cliente proveedor de ubicación
+    private lateinit var clienteLocalizacion: FusedLocationProviderClient
+
+    // Callback para manejar las actualizaciones de ubicación
+    private lateinit var locationCallback: LocationCallback
+
+    // Para saber si las actualizaciones están activas entre corridas de la app
+    private var actualizandoPosicion: Boolean = false
+*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
