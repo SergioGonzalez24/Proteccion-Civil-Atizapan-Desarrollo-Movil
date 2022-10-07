@@ -35,4 +35,10 @@ class BottomMenu : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+    /*
+    override fun onSupportNavigateUp():Boolean{
+        val navController=findNavController(R.id.nav_host_fragment_activity_menu)
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+    */
 }

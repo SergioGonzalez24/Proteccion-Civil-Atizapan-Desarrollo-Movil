@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="mx.itesm.jmggm.atizapan.mainFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.mainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -28,42 +28,54 @@
     </fragment>
     <fragment
         android:id="@+id/policeMapFragment"
-        android:name="mx.itesm.jmggm.atizapan.policeMapFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.policeMapFragment"
         android:label="fragment_police_map"
-        tools:layout="@layout/fragment_police_map" />
+        tools:layout="@layout/fragment_police_map" >
+        <argument
+            android:name="tipoServicio"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/fireMapFragment"
-        android:name="mx.itesm.jmggm.atizapan.fireMapFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.fireMapFragment"
         android:label="fragment_fire_map"
-        tools:layout="@layout/fragment_fire_map" />
+        tools:layout="@layout/fragment_fire_map" >
+        <argument
+            android:name="tipoServicio"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/healthMapFragment"
-        android:name="mx.itesm.jmggm.atizapan.healthMapFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.healthMapFragment"
         android:label="fragment_health_map"
-        tools:layout="@layout/fragment_health_map" />
+        tools:layout="@layout/fragment_health_map" >
+        <argument
+            android:name="tipoServicio"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/directoryFragment"
-        android:name="mx.itesm.jmggm.atizapan.directoryFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.directoryFragment"
         android:label="fragment_directory"
         tools:layout="@layout/fragment_directory" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="mx.itesm.jmggm.atizapan.settingsFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.settingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/newsFragment"
-        android:name="mx.itesm.jmggm.atizapan.newsFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.newsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="mx.itesm.jmggm.atizapan.loginFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.loginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/signinFragment"
-        android:name="mx.itesm.jmggm.atizapan.signinFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.signinFragment"
         android:label="fragment_signin"
         tools:layout="@layout/fragment_signin" />
 </navigation>

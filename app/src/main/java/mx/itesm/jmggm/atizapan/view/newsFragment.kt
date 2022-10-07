@@ -1,4 +1,4 @@
-package mx.itesm.jmggm.atizapan
+package mx.itesm.jmggm.atizapan.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [healthMapFragment.newInstance] factory method to
+ * Use the [newsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class healthMapFragment : Fragment() {
+class newsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +34,7 @@ class healthMapFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_health_map, container, false)
+        return inflater.inflate(R.layout.fragment_news, container, false)
     }
 
     companion object {
@@ -44,12 +44,12 @@ class healthMapFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment healthMapFragment.
+         * @return A new instance of fragment newsFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            healthMapFragment().apply {
+            newsFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
