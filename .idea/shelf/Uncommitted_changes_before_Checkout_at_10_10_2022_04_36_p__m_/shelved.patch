@@ -1,0 +1,68 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_bottom_menu.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_directory.xml\" value=\"0.10989583333333333\" />\r\n        <entry key=\"..\\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_news.xml\" value=\"0.10989583333333333\" />\r\n        <entry key=\"..\\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_settings.xml\" value=\"0.10989583333333333\" />\r\n        <entry key=\"..\\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/splash_screen.xml\" value=\"0.25\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,20 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="DesignSurface">
+-    <option name="filePathToZoomLevelMap">
+-      <map>
+-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_bottom_menu.xml" value="0.264" />
+-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_directory.xml" value="0.10989583333333333" />
+-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_news.xml" value="0.10989583333333333" />
+-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_settings.xml" value="0.10989583333333333" />
+-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/splash_screen.xml" value="0.25" />
+-      </map>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/build/classes" />
+-  </component>
+-  <component name="ProjectType">
+-    <option name="id" value="Android" />
+-  </component>
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: app/src/main/java/mx/itesm/jmggm/atizapan/view/AlertMapFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mx.itesm.jmggm.atizapan.view\r\n\r\nimport android.content.pm.PackageManager\r\nimport android.location.Location\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.widget.Toast\r\nimport androidx.core.app.ActivityCompat\r\nimport androidx.core.content.ContextCompat\r\nimport com.google.android.gms.maps.*\r\nimport com.google.android.gms.maps.model.LatLng\r\nimport com.google.android.gms.maps.model.MarkerOptions\r\nimport mx.itesm.jmggm.atizapan.R\r\n\r\nclass AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener{\r\n\r\n\r\n    private lateinit var map:GoogleMap\r\n    companion object{\r\n        const val RESQUEST_CODE_LOCATION=0\r\n    }\r\n\r\n    override fun onMapReady(googleMap: GoogleMap) {\r\n        map = googleMap\r\n        createMerker()\r\n        map.setOnMyLocationButtonClickListener (this)\r\n        map.setOnMyLocationClickListener(this)\r\n        enableLocation()\r\n    }\r\n\r\n    private fun createMerker() {\r\n        val coordinate = LatLng(19.543548, -99.234876)\r\n        val marker = MarkerOptions().position(coordinate).title(\"Atizapan\")\r\n        map.addMarker(marker)\r\n        map.animateCamera(\r\n            CameraUpdateFactory.newLatLngZoom(coordinate, 18f),\r\n            4000,\r\n            null\r\n        )\r\n    }\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_alert_map_fragment)\r\n        createMapFragment()\r\n    }\r\n\r\n    private fun createMapFragment() {\r\n        val mapFragment = supportFragmentManager.findFragmentById(R.id.AlertMap) as SupportMapFragment\r\n        mapFragment.getMapAsync(this)\r\n    }\r\n\r\n    /*\r\n    private fun createMapFragment() {\r\n        val mapFragment = supportFragmentManager.findFragmentById(com.google.android.gms.maps.R.id.map) as SupportMapFragment\r\n        mapFragment.getMapAsync(this)\r\n\r\n    }\r\n     */\r\n\r\n    private fun isLocationPermissionGranted() =\r\n        ContextCompat.checkSelfPermission(\r\n            this,\r\n            android.Manifest.permission.ACCESS_FINE_LOCATION\r\n        ) == PackageManager.PERMISSION_GRANTED\r\n\r\n    private fun enableLocation() {\r\n        if (!::map.isInitialized) return\r\n        if (isLocationPermissionGranted()) {\r\n            map.isMyLocationEnabled=true\r\n        } else {\r\n            requestLocationPermission()\r\n        }\r\n    }\r\n\r\n    private fun requestLocationPermission() {\r\n        if (ActivityCompat.shouldShowRequestPermissionRationale(\r\n                this,\r\n                android.Manifest.permission.ACCESS_FINE_LOCATION\r\n            )\r\n        ) {\r\n            Toast.makeText(\r\n                this,\r\n                \"Aceptar los permisos de localizacion en ajustes.\",\r\n                Toast.LENGTH_SHORT\r\n            ).show()\r\n        } else {\r\n            ActivityCompat.requestPermissions(\r\n                this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),\r\n                RESQUEST_CODE_LOCATION\r\n            )\r\n        }\r\n    }\r\n\r\n    override fun onRequestPermissionsResult(\r\n        requestCode: Int,\r\n        permissions: Array<out String>,\r\n        grantResults: IntArray\r\n    ) {\r\n        super.onRequestPermissionsResult(requestCode, permissions, grantResults)\r\n        when (requestCode) {\r\n            RESQUEST_CODE_LOCATION -> if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {\r\n                map.isMyLocationEnabled = true\r\n            } else {\r\n                Toast.makeText(this, \"Para activar la localizacion, en ajustas acepta los permisos.\", Toast.LENGTH_SHORT).show()\r\n            }\r\n            else->{}\r\n        }\r\n    }\r\n\r\n    override fun onResumeFragments() {\r\n        super.onResumeFragments()\r\n        if(!::map.isInitialized) return\r\n        if(!isLocationPermissionGranted()){\r\n            map.isMyLocationEnabled=false\r\n            Toast.makeText(this, \"Para activar la localizacion, en ajustas acepta los permisos.\", Toast.LENGTH_SHORT).show()\r\n        }\r\n    }\r\n\r\n    override fun onMyLocationButtonClick(): Boolean {\r\n        Toast.makeText(this, \"Boton pulsado\", Toast.LENGTH_SHORT).show()\r\n        return false\r\n    }\r\n\r\n    override fun onMyLocationClick(p0: Location) {\r\n        Toast.makeText(this, \"Estas en ${p0.latitude},${p0.longitude}\", Toast.LENGTH_SHORT).show()\r\n\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/mx/itesm/jmggm/atizapan/view/AlertMapFragment.kt b/app/src/main/java/mx/itesm/jmggm/atizapan/view/AlertMapFragment.kt
+--- a/app/src/main/java/mx/itesm/jmggm/atizapan/view/AlertMapFragment.kt	
++++ b/app/src/main/java/mx/itesm/jmggm/atizapan/view/AlertMapFragment.kt	
+@@ -7,6 +7,7 @@
+ import android.widget.Toast
+ import androidx.core.app.ActivityCompat
+ import androidx.core.content.ContextCompat
++import androidx.navigation.navArgs
+ import com.google.android.gms.maps.*
+ import com.google.android.gms.maps.model.LatLng
+ import com.google.android.gms.maps.model.MarkerOptions
+@@ -14,7 +15,7 @@
+ 
+ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener{
+ 
+-
++    private val args:AlertMapFragmentArgs by navArgs()
+     private lateinit var map:GoogleMap
+     companion object{
+         const val RESQUEST_CODE_LOCATION=0
+@@ -44,6 +45,8 @@
+         createMapFragment()
+     }
+ 
++
++
+     private fun createMapFragment() {
+         val mapFragment = supportFragmentManager.findFragmentById(R.id.AlertMap) as SupportMapFragment
+         mapFragment.getMapAsync(this)
