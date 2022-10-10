@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Atizapan"
         tools:targetApi="31">
         <activity
-            android:name=".AlertMapFragment"
+            android:name=".view.AlertMapFragment"
             android:exported="false" />
 
         <meta-data

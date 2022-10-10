@@ -1,4 +1,4 @@
-package mx.itesm.jmggm.atizapan
+package mx.itesm.jmggm.atizapan.view
 
 import android.content.pm.PackageManager
 import android.location.Location
@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import mx.itesm.jmggm.atizapan.R
 
 class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener{
 

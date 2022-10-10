@@ -47,7 +47,7 @@
         tools:layout="@layout/fragment_signin" />
     <activity
         android:id="@+id/alertMapFragment"
-        android:name="mx.itesm.jmggm.atizapan.AlertMapFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.AlertMapFragment"
         android:label="Alerta"
         tools:layout="@layout/activity_alert_map_fragment">
         <argument

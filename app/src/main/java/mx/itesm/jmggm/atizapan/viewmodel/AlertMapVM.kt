@@ -11,5 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 //import mx.itesm.ag.navegacionstreaming.CostoViewModel
 import android.widget.Toast
 
-class policeMapVM : ViewModel(){
+class AlertMapVM: ViewModel(){
+
+    val alerta=MutableLiveData<String>()
+
 }
