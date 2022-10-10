@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_signinFragment"
             app:destination="@id/signinFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_alertMapFragment"
+            app:destination="@id/alertMapFragment" />
     </fragment>
     <fragment
         android:id="@+id/directoryFragment"
@@ -42,4 +45,13 @@
         android:name="mx.itesm.jmggm.atizapan.view.signinFragment"
         android:label="Registrarse"
         tools:layout="@layout/fragment_signin" />
+    <activity
+        android:id="@+id/alertMapFragment"
+        android:name="mx.itesm.jmggm.atizapan.AlertMapFragment"
+        android:label="Alerta"
+        tools:layout="@layout/activity_alert_map_fragment">
+        <argument
+            android:name="tipoAlerta"
+            app:argType="string" />
+    </activity>
 </navigation>

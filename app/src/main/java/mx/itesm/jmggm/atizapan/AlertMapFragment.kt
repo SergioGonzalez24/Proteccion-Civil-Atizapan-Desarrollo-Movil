@@ -44,7 +44,8 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMy
     }
 
     private fun createMapFragment() {
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.AlertMap)
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.AlertMap) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
 
     /*

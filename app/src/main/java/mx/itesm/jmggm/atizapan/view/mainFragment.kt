@@ -1,6 +1,5 @@
 package mx.itesm.jmggm.atizapan.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import mx.itesm.jmggm.atizapan.AlertMapFragment
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
@@ -62,16 +60,16 @@ class mainFragment : Fragment() {
 
     private fun registrarEventos() {
         binding.btnPolice.setOnClickListener {
-            val actMapa= Intent(this, AlertMapFragment::class.java)
-            startActivity(actMapa)
+            val accion = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Policia")
+            findNavController().navigate(accion)
         }
         binding.btnFire.setOnClickListener {
-            val actMapa= Intent(this, AlertMapFragment::class.java)
-            startActivity(actMapa)
+            val accion2 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Bomberos")
+            findNavController().navigate(accion2)
         }
         binding.btnHealth.setOnClickListener {
-            val actMapa= Intent(this, AlertMapFragment::class.java)
-            startActivity(actMapa)
+            val accion3 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Ambulancia")
+            findNavController().navigate(accion3)
         }
     }
 
