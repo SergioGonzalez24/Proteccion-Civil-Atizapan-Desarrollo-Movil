@@ -3,29 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_main.xml" value="0.25" />
-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_map_fire.xml" value="0.25" />
-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_welcome_loading.xml" value="0.4" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_alert_map_fragment.xml" value="0.2125" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_bottom_menu.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_directory.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_fire_map.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_health_map.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_log_in.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_login.xml" value="0.1" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_main.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_map_fire.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_map_police.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_map_red_cross.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_news.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_police_map.xml" value="0.1" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_signin.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_welcome_loading.xml" value="0.25" />
-        <entry key="..\:/Users/jmgur/OneDrive/Escritorio/ITC/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/menu/bottom_nav_menu.xml" value="0.11770833333333333" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_bottom_menu.xml" value="0.264" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_directory.xml" value="0.10989583333333333" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_news.xml" value="0.10989583333333333" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_settings.xml" value="0.10989583333333333" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/splash_screen.xml" value="0.25" />
       </map>
     </option>
   </component>
