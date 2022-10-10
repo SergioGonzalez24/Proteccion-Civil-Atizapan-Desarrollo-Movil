@@ -1,5 +1,6 @@
 package mx.itesm.jmggm.atizapan.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import mx.itesm.jmggm.atizapan.AlertMapFragment
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
@@ -26,19 +28,19 @@ class mainFragment : Fragment() {
 
     private val viewModel:mainVM by viewModels()
     private lateinit var binding: FragmentMainBinding
-    /*
+
     // Código para solicitar permiso de usar la ubicación
     private val CODIGO_PERMISO_GPS = 200
 
     // Cliente proveedor de ubicación
-    private lateinit var clienteLocalizacion: FusedLocationProviderClient
+    //private lateinit var clienteLocalizacion: FusedLocationProviderClient
 
     // Callback para manejar las actualizaciones de ubicación
-    private lateinit var locationCallback: LocationCallback
+    //private lateinit var locationCallback: LocationCallback
 
     // Para saber si las actualizaciones están activas entre corridas de la app
     private var actualizandoPosicion: Boolean = false
-*/
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,16 +62,16 @@ class mainFragment : Fragment() {
 
     private fun registrarEventos() {
         binding.btnPolice.setOnClickListener {
-            val accion = mainFragmentDirections.actionMainFragmentToPoliceMapFragment("Policia")
-            findNavController().navigate(accion)
+            val actMapa= Intent(this, AlertMapFragment::class.java)
+            startActivity(actMapa)
         }
         binding.btnFire.setOnClickListener {
-            val accion2 = mainFragmentDirections.actionMainFragmentToFireMapFragment("Bomberos")
-            findNavController().navigate(accion2)
+            val actMapa= Intent(this, AlertMapFragment::class.java)
+            startActivity(actMapa)
         }
         binding.btnHealth.setOnClickListener {
-            val accion3 = mainFragmentDirections.actionMainFragmentToHealthMapFragment("Ambulancia")
-            findNavController().navigate(accion3)
+            val actMapa= Intent(this, AlertMapFragment::class.java)
+            startActivity(actMapa)
         }
     }
 
