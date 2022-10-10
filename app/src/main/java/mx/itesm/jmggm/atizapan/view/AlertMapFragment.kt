@@ -4,17 +4,20 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.navigation.navArgs
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import mx.itesm.jmggm.atizapan.R
+import mx.itesm.jmggm.atizapan.databinding.ActivityAlertMapFragmentBinding
 
 class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener{
-
-
+    private lateinit var binding:ActivityAlertMapFragmentBinding
+    private val args:AlertMapFragmentArgs by navArgs()
     private lateinit var map:GoogleMap
     companion object{
         const val RESQUEST_CODE_LOCATION=0
@@ -40,8 +43,28 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMy
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_alert_map_fragment)
+        binding=ActivityAlertMapFragmentBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        //setContentView(R.layout.activity_alert_map_fragment)
+        ocultarImg()
         createMapFragment()
+    }
+    @Suppress("UNREACHABLE_CODE", "UnusedEquals")
+    private fun ocultarImg() {
+        val tipoAlerta=args.tipoAlerta
+        if(tipoAlerta=="Policia"){
+            binding.imgPolice.visibility=View.VISIBLE
+            binding.imgFire.visibility= View.GONE
+            binding.imgHealth.visibility=View.GONE
+        } else if(tipoAlerta=="Bomberos"){
+            binding.imgFire.visibility==View.VISIBLE
+            binding.imgHealth.visibility=View.GONE
+            binding.imgPolice.visibility=View.GONE
+        } else{
+            binding.imgHealth.visibility==View.VISIBLE
+            binding.imgFire.visibility= View.GONE
+            binding.imgPolice.visibility=View.GONE
+        }
     }
 
     private fun createMapFragment() {
