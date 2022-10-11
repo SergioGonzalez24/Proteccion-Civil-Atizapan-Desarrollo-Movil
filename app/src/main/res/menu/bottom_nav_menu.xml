@@ -14,6 +14,6 @@
         android:title="Directorio" />
     <item
         android:id="@+id/settingsFragment"
-        android:icon="@drawable/gear"
-        android:title="Configuracion" />
+        android:icon="@drawable/logout"
+        android:title="Cerrar Sesión" />
 </menu>
