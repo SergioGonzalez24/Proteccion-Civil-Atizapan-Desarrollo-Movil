@@ -49,6 +49,8 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMy
         ocultarImg()
         createMapFragment()
     }
+
+
     @Suppress("UNREACHABLE_CODE", "UnusedEquals")
     private fun ocultarImg() {
         val tipoAlerta=args.tipoAlerta
@@ -146,6 +148,6 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMy
 
     override fun onMyLocationClick(p0: Location) {
         Toast.makeText(this, "Estas en ${p0.latitude},${p0.longitude}", Toast.LENGTH_SHORT).show()
-
     }
+
 }
