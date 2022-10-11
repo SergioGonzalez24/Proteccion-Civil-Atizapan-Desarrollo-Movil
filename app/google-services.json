@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "342072291208",
+    "project_id": "atizapan-77234",
+    "storage_bucket": "atizapan-77234.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342072291208:android:d68d97f6caac2cf066543d",
+        "android_client_info": {
+          "package_name": "mx.itesm.jmggm.atizapan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342072291208-lc22dh9m1ucur3cnuojjepj4qj8m9f48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.jmggm.atizapan",
+            "certificate_hash": "150d8e41c2571707413991476e19d815e42c0912"
+          }
+        },
+        {
+          "client_id": "342072291208-nkant9phdi26hqflnu18so9p6i56arvr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJmH884VdAYA0jUBeerVeG4ffXxY_TKYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342072291208-nkant9phdi26hqflnu18so9p6i56arvr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

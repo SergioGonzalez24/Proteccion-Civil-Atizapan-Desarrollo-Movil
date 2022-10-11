@@ -6,4 +6,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    //Login Screen
+    <string name="continue_google">Continuar con Google</string>
 </resources>

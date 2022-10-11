@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Lightpurple">#8692f7</color>
 
+    //Login screen
+    <color name="black_login">#000000</color>
+    <color name="background_login_screen">#EFEFEF</color>
 </resources>
