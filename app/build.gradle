@@ -71,12 +71,15 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-auth-ktx'
 
+    //Para darle diseño al directorio
+    implementation'de.hdodenhof:circleimageview:3.1.0'
+
     // Also add the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:20.3.0'
     implementation 'com.google.firebase:firebase-common-ktx:20.1.2'
 
 
-    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.7'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.8'
     implementation platform('com.google.firebase:firebase-bom:30.3.2')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     testImplementation 'junit:junit:4.13.2'
