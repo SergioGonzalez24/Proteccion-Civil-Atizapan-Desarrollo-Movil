@@ -15,7 +15,11 @@
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_signin.xml" value="0.25" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/splash_screen.xml" value="0.25" />
         <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/menu/bottom_nav_menu.xml" value="0.10989583333333333" />
+        <entry key="app/src/main/res/layout/fragment_directory.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_fire_map.xml" value="0.22418478260869565" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_view.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -24,5 +28,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.27828674316406254" />
+      </ProjectState>
+    </option>
   </component>
 </project>

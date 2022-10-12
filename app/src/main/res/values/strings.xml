@@ -6,4 +6,19 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <!-- Departamentos -->
+    <string-array name= "Departamentos">
+        <item>Protección Civil</item>
+        <item>Bomberos Atizapán</item>
+        <item>Cruz Roja</item>
+        <item>Emergencias Atizapán</item>
+        <item>Seguridad pública</item>
+        <item>Centro Antirrábico</item>
+        <item>Policía Federal de Caminos</item>
+        <item>Fugas de Agua</item>
+        <item>Fugas de Gas</item>
+    </string-array>
+
+
+
 </resources>
