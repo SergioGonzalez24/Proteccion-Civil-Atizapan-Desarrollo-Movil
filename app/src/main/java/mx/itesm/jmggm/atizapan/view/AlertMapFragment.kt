@@ -1,27 +1,19 @@
 package mx.itesm.jmggm.atizapan.view
 
-import android.Manifest
 import android.annotation.SuppressLint
-import android.content.DialogInterface
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.navArgs
-import com.google.android.gms.location.*
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import mx.itesm.jmggm.atizapan.BuildConfig
 import mx.itesm.jmggm.atizapan.R
 import mx.itesm.jmggm.atizapan.databinding.ActivityAlertMapFragmentBinding
 
