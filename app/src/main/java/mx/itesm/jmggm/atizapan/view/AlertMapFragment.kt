@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.navArgs
@@ -16,12 +17,14 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import mx.itesm.jmggm.atizapan.R
 import mx.itesm.jmggm.atizapan.databinding.ActivityAlertMapFragmentBinding
+import mx.itesm.jmggm.atizapan.viewmodel.AlertMapVM
 
 class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyLocationButtonClickListener,GoogleMap.OnMyLocationChangeListener, GoogleMap.OnMyLocationClickListener{
     private lateinit var position: Location
     private lateinit var binding:ActivityAlertMapFragmentBinding
     private val args:AlertMapFragmentArgs by navArgs()
     private lateinit var map:GoogleMap
+    private val viewmodel:AlertMapVM by viewModels()
     companion object{
         const val RESQUEST_CODE_LOCATION=0
     }
@@ -58,19 +61,32 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         registrarEventos()
 
     }
-
+    
+    @Suppress("UNREACHABLE_CODE", "UnusedEquals")
     private fun registrarEventos() {
             binding.btnSolicitarServicio.setOnClickListener {
-                Toast.makeText(this,
-                    "Estas en ${position.latitude},${position.longitude}",
-                    Toast.LENGTH_SHORT).show()
+                val user:Int=100
+                val tipoAlerta=args.tipoAlerta
+                if(tipoAlerta=="Policia"){
+                    viewmodel.enviarCoordenadas(100,5,"${position.latitude},${position.longitude}")
+                    Toast.makeText(this,
+                        "Coordenadas ${position.latitude},${position.longitude} enviadas",
+                        Toast.LENGTH_SHORT).show()
+
+                } else if(tipoAlerta=="Bomberos"){
+                    viewmodel.enviarCoordenadas(100,2,"${position.latitude},${position.longitude}")
+                    Toast.makeText(this,
+                        "Coordenadas ${position.latitude},${position.longitude} enviadas",
+                        Toast.LENGTH_SHORT).show()
+                } else{
+                    viewmodel.enviarCoordenadas(100,3,"${position.latitude},${position.longitude}")
+                    Toast.makeText(this,
+                        "Coordenadas ${position.latitude},${position.longitude} enviadas",
+                        Toast.LENGTH_SHORT).show()
+                }
             }
     }
 
-    override fun onStart() {
-        super.onStart()
-        //registrarEventos(position)
-    }
 
 
     @Suppress("UNREACHABLE_CODE", "UnusedEquals")
