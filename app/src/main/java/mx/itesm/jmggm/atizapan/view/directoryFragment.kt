@@ -1,22 +1,33 @@
-package mx.itesm.jmggm.atizapan
+package mx.itesm.jmggm.atizapan.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import mx.itesm.jmggm.atizapan.R
+import mx.itesm.jmggm.atizapan.model.User
 import mx.itesm.jmggm.atizapan.databinding.FragmentDirectoryBinding
+import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
 
 class directoryFragment : Fragment() {
     private lateinit var binding: FragmentDirectoryBinding
     private lateinit var departamentoList: ArrayList<User>
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding= FragmentDirectoryBinding.inflate(layoutInflater)
+        return binding.root
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentDirectoryBinding.inflate(layoutInflater)
-
+        //println("HOLA")
         val imageID = intArrayOf(
-            R.drawable.logopc,R.drawable.shield,R.drawable.medicine,
+            R.drawable.logopc,R.drawable.shield, R.drawable.medicine,
             R.drawable.policebadge,R.drawable.ssp,R.drawable.ar,
             R.drawable.pfc,R.drawable.fuga,R.drawable.fugas
         )

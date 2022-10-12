@@ -15,11 +15,6 @@
             app:destination="@id/alertMapFragment" />
     </fragment>
     <fragment
-        android:id="@+id/directoryFragment"
-        android:name="mx.itesm.jmggm.atizapan.view.directoryFragment"
-        android:label="Directorio"
-        tools:layout="@layout/fragment_directory" />
-    <fragment
         android:id="@+id/settingsFragmentt"
         android:label="Configuraciónn"
         tools:layout="@layout/fragment_settings" />
@@ -37,9 +32,14 @@
             android:name="tipoAlerta"
             app:argType="string" />
     </activity>
-    <activity
+    <fragment
+        android:id="@+id/directoryFragment2"
+        android:name="mx.itesm.jmggm.atizapan.view.directoryFragment"
+        android:label="Directorio"
+        tools:layout="@layout/fragment_directory" />
+    <!--<activity
         android:id="@+id/settingsFragment"
         android:name="mx.itesm.jmggm.atizapan.view.GoogleSignInActivity"
         android:label="Configuración"
-        tools:layout="@layout/activity_google_sign" />
+        tools:layout="@layout/activity_google_sign" />-->
 </navigation>

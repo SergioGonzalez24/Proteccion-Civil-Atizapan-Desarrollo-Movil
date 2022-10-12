@@ -9,9 +9,9 @@
         android:icon="@drawable/news"
         android:title="Noticias" />
     <item
-        android:id="@+id/directoryFragment"
+        android:id="@+id/directoryFragment2"
         android:icon="@android:drawable/stat_sys_phone_call"
-        android:title="Directorio" />
+        android:title="Directorio"/>
     <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/logout"

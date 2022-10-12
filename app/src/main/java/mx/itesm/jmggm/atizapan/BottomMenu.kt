@@ -28,17 +28,12 @@ class BottomMenu : AppCompatActivity() {
             setOf(
                 R.id.mainFragment,
                 R.id.newsFragment,
-                R.id.directoryFragment,
+                R.id.directoryFragment2,
                 R.id.settingsFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
-    /*
-    override fun onSupportNavigateUp():Boolean{
-        val navController=findNavController(R.id.nav_host_fragment_activity_menu)
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-    */
+
 }
