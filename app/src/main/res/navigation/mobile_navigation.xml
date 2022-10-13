@@ -42,11 +42,6 @@
         android:label="fragment_health_map"
         tools:layout="@layout/fragment_health_map" />
     <fragment
-        android:id="@+id/directoryFragment"
-        android:name="mx.itesm.jmggm.atizapan.directoryFragment"
-        android:label="fragment_directory"
-        tools:layout="@layout/fragment_directory" />
-    <fragment
         android:id="@+id/settingsFragment"
         android:name="mx.itesm.jmggm.atizapan.settingsFragment"
         android:label="fragment_settings"
@@ -66,4 +61,9 @@
         android:name="mx.itesm.jmggm.atizapan.signinFragment"
         android:label="fragment_signin"
         tools:layout="@layout/fragment_signin" />
+    <fragment
+        android:id="@+id/directoryFragment"
+        android:name="mx.itesm.jmggm.atizapan.directoryFragment"
+        android:label="fragment_directory"
+        tools:layout="@layout/fragment_directory" />
 </navigation>
