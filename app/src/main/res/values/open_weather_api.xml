@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_weather_key" templeteMergesStrategy="preserve" translatable="false">68b800823cf8c5d32ecea64627e8c994</string>
+</resources>

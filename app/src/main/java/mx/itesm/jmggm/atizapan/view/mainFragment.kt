@@ -5,14 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
 //import mx.itesm.jmggm.atizapan.mainFragmentDirections
-import mx.itesm.jmggm.atizapan.viewmodel.mainVM
+import mx.itesm.jmggm.atizapan.viewmodel.MainVM
 
 
 
@@ -24,8 +23,9 @@ import mx.itesm.jmggm.atizapan.viewmodel.mainVM
  */
 class mainFragment : Fragment() {
 
-    private val viewModel:mainVM by viewModels()
+    private val viewModel:MainVM by viewModels()
     private lateinit var binding: FragmentMainBinding
+    //private var temp:Double?=null
 
     // Código para solicitar permiso de usar la ubicación
     private val CODIGO_PERMISO_GPS = 200
@@ -56,6 +56,18 @@ class mainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registrarEventos()
+        registrarWeather()
+    }
+
+    private fun registrarWeather() {
+        val lat ="19.543548"
+        val lon="-99.234876"
+        val exclude ="current"
+        val apiKey="68b800823cf8c5d32ecea64627e8c994"
+        viewModel.conseguirDatosClima(lat,lon,exclude,apiKey)
+        viewModel.temp.observe(viewLifecycleOwner){temperatura->
+            binding.outTemp.setText(temperatura.toString())
+        }
     }
 
     private fun registrarEventos() {
