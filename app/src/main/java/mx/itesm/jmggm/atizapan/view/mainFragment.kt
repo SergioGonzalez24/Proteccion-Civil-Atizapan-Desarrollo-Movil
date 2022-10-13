@@ -59,20 +59,9 @@ class mainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registrarEventos()
-        registrarWeather()
     }
 
 
-    private fun registrarWeather() {
-        val lat ="19.543548"
-        val lon="-99.234876"
-        val exclude ="current"
-        val apiKey="68b800823cf8c5d32ecea64627e8c994"
-        viewModel.conseguirDatosClima(lat,lon,exclude,apiKey)
-        viewModel.temp.observe(viewLifecycleOwner){temperatura->
-            binding.outTemp.setText(temperatura.toString())
-        }
-    }
 
     private fun registrarEventos() {
         binding.btnPolice.setOnClickListener {

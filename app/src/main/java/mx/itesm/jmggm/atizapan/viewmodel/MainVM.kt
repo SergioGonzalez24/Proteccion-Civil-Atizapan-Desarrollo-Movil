@@ -2,9 +2,6 @@ package mx.itesm.jmggm.atizapan.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import mx.itesm.jmggm.atizapan.model.AlertDPO
-import mx.itesm.jmggm.atizapan.model.ResponseClass
-import mx.itesm.jmggm.atizapan.model.WeatherResponse
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
