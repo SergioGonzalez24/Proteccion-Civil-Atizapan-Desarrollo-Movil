@@ -154,7 +154,8 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         if(!::map.isInitialized) return
         if(!isLocationPermissionGranted()){
             map.isMyLocationEnabled=false
-            Toast.makeText(this, "Para activar la localizacion, en ajustas acepta los permisos.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Para activar la localizacion, en ajustas acepta los permisos.",
+                Toast.LENGTH_SHORT).show()
         }
     }
 
