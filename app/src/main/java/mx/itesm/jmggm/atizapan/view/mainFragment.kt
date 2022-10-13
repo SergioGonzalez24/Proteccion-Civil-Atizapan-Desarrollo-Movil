@@ -1,10 +1,14 @@
 package mx.itesm.jmggm.atizapan.view
 
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 //import com.google.android.gms.location.FusedLocationProviderClient
@@ -12,8 +16,7 @@ import androidx.navigation.fragment.findNavController
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
 //import mx.itesm.jmggm.atizapan.mainFragmentDirections
 import mx.itesm.jmggm.atizapan.viewmodel.MainVM
-
-
+import java.util.jar.Manifest
 
 
 /**
@@ -59,6 +62,7 @@ class mainFragment : Fragment() {
         registrarWeather()
     }
 
+
     private fun registrarWeather() {
         val lat ="19.543548"
         val lon="-99.234876"
@@ -83,6 +87,12 @@ class mainFragment : Fragment() {
             val accion3 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Ambulancia")
             findNavController().navigate(accion3)
         }
+
+        binding.btnClima.setOnClickListener {
+            val accion4 = mainFragmentDirections.actionMainFragmentToClimaActivity("Ver Clima")
+            findNavController().navigate(accion4)
+        }
     }
 
 }
+

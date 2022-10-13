@@ -19,7 +19,8 @@ import mx.itesm.jmggm.atizapan.R
 import mx.itesm.jmggm.atizapan.databinding.ActivityAlertMapFragmentBinding
 import mx.itesm.jmggm.atizapan.viewmodel.AlertMapVM
 
-class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyLocationButtonClickListener,GoogleMap.OnMyLocationChangeListener, GoogleMap.OnMyLocationClickListener{
+class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyLocationButtonClickListener,
+    GoogleMap.OnMyLocationChangeListener, GoogleMap.OnMyLocationClickListener{
     private lateinit var position: Location
     private lateinit var binding:ActivityAlertMapFragmentBinding
     private val args:AlertMapFragmentArgs by navArgs()
@@ -160,12 +161,14 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
     }
 
     override fun onMyLocationButtonClick(): Boolean {
-        Toast.makeText(this, "Boton pulsado", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Boton pulsado",
+            Toast.LENGTH_SHORT).show()
         return false
     }
 
     override fun onMyLocationClick(p0: Location) {
-        Toast.makeText(this, "Estas en ${p0.latitude},${p0.longitude}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Estas en ${p0.latitude},${p0.longitude}",
+            Toast.LENGTH_SHORT).show()
 
     }
 

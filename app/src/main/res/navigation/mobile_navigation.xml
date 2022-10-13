@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_alertMapFragment"
             app:destination="@id/alertMapFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_climaActivity"
+            app:destination="@id/climaActivity" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragmentt"
@@ -37,6 +40,14 @@
         android:name="mx.itesm.jmggm.atizapan.view.directoryFragment"
         android:label="Directorio"
         tools:layout="@layout/fragment_directory" />
+    <activity
+        android:id="@+id/climaActivity"
+        android:name="mx.itesm.jmggm.atizapan.model.ClimaActivity"
+        android:label="Clima Actual" >
+        <argument
+            android:name="Clima"
+            app:argType="string" />
+    </activity>
     <!--<activity
         android:id="@+id/settingsFragment"
         android:name="mx.itesm.jmggm.atizapan.view.GoogleSignInActivity"

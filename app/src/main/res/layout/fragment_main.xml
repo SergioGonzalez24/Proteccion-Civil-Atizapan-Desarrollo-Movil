@@ -164,8 +164,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Emergencia"
+            android:backgroundTint="@color/Rojo"
             android:textColor="#FFFFFF"
-            app:iconTint="#92B73A74" />
+            app:iconTint="#ff0000" />
+
+        <Button
+            android:id="@+id/btnClima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Rosaclaro"
+            android:textColor="@color/Negro"
+            android:text="Ver clima actual" />
 
     </LinearLayout>
 
