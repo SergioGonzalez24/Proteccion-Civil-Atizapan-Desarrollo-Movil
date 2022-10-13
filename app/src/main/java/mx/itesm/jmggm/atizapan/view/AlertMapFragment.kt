@@ -66,7 +66,7 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
     @Suppress("UNREACHABLE_CODE", "UnusedEquals")
     private fun registrarEventos() {
             binding.btnSolicitarServicio.setOnClickListener {
-                val user:Int=100
+                val user:Int=1000
                 val tipoAlerta=args.tipoAlerta
                 if(tipoAlerta=="Policia"){
                     viewmodel.enviarCoordenadas(100,5,"${position.latitude},${position.longitude}")
