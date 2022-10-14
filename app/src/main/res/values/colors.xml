@@ -11,6 +11,8 @@
     <color name="Rojo">#ff0000</color>
     <color name="Rosaclaro">#e9b8c5</color>
     <color name="Negro">#000000</color>
+    <color name="Azulclarito">#cefaf2</color>
+    <color name="ActionBarTitleColor">@color/Negro</color>
     //Login screen
     <color name="black_login">#000000</color>
     <color name="background_login_screen">#EFEFEF</color>

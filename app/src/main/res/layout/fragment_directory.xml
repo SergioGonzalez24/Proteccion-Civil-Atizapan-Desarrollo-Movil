@@ -5,16 +5,21 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Azulclarito"
     tools:context=".view.directoryFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/Bomberos"
@@ -50,6 +55,7 @@
                         android:id="@+id/numero1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
                         android:text="55 3622 1004/55 5565 0696" />
 
@@ -114,6 +120,7 @@
                         android:id="@+id/numero5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
                         android:text="5684 2142/5684 9710" />
 
@@ -178,6 +185,7 @@
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
                         android:text="5822 2547/5822 8151" />
 
@@ -242,6 +250,7 @@
                         android:id="@+id/numero3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
                         android:text="58 22 25 47/58 22 81 51" />
 
@@ -306,6 +315,7 @@
                         android:id="@+id/numero2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
                         android:text="55 58 22 25 47/58 22 81 51" />
 
@@ -370,6 +380,7 @@
                         android:id="@+id/numero4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
                         android:text="55 1106-2163" />
 
@@ -434,6 +445,7 @@
                         android:id="@+id/numero7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
                         android:text="01 800 201 24 89" />
 
@@ -463,70 +475,9 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <LinearLayout
-            android:id="@+id/FugasAgua"
-            android:layout_width="match_parent"
-            android:layout_height="82dp"
-            android:layout_marginVertical="10dp"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/FugasAguapic"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:src="@drawable/fuga" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/FugasAguaDepto"
-                    android:layout_width="183dp"
-                    android:layout_height="wrap_content"
-                    android:text="Fuga de agua"
-                    android:textColor="@color/black"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/numero6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="01 800 201 24 89" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/llamaFugaA"
-                    android:layout_width="match_parent"
-                    android:layout_height="38dp"
-                    android:layout_weight="1"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/botonllamar" />
-
-                <ImageButton
-                    android:id="@+id/locaFugA"
-                    android:layout_width="match_parent"
-                    android:layout_height="38dp"
-                    android:layout_weight="1"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/location" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/Antirrabic"
+                android:id="@+id/FugasAgua"
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
                 android:layout_marginVertical="10dp"
@@ -534,11 +485,11 @@
                 tools:ignore="MissingConstraints">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/Antirrabicpic"
+                    android:id="@+id/FugasAguapic"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/ar" />
+                    android:src="@drawable/fuga" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -547,7 +498,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/AntirrabicDpto"
+                        android:id="@+id/FugasAguaDepto"
                         android:layout_width="183dp"
                         android:layout_height="wrap_content"
                         android:text="Fuga de agua"
@@ -556,11 +507,12 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/numero8"
+                        android:id="@+id/numero6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
-                        android:text="58 22 10 11" />
+                        android:text="01 800 201 24 89" />
 
 
                 </LinearLayout>
@@ -571,7 +523,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/llamaAntirrabic"
+                        android:id="@+id/llamaFugaA"
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:layout_weight="1"
@@ -579,7 +531,7 @@
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
-                        android:id="@+id/locaAntirrabic"
+                        android:id="@+id/locaFugA"
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:layout_weight="1"
@@ -587,7 +539,70 @@
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
 
-            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/Antirrabic"
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/Antirrabicpic"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/ar" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AntirrabicDpto"
+                            android:layout_width="183dp"
+                            android:layout_height="wrap_content"
+                            android:text="Fuga de agua"
+                            android:textColor="@color/black"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/numero8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Negro"
+                            android:layout_marginTop="5dp"
+                            android:text="58 22 10 11" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/llamaAntirrabic"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/botonllamar" />
+
+                        <ImageButton
+                            android:id="@+id/locaAntirrabic"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/location" />
+                    </LinearLayout>
+
+                </LinearLayout>
 
 
             </LinearLayout>

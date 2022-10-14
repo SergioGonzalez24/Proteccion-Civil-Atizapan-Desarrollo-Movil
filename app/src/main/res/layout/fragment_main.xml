@@ -5,16 +5,15 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@drawable/wallpaper"
+    android:background="@color/Azulclarito"
     tools:context=".view.mainFragment">
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +21,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bienvenido." />
+            android:text="Bienvenidx"
+            android:textColor="@color/Negro"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:src="@drawable/atizazul" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="66dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -62,8 +74,8 @@
             android:id="@+id/btnEmergencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Emergencia"
             android:backgroundTint="@color/Rojo"
+            android:text="Emergencia"
             android:textColor="#FFFFFF"
             app:iconTint="#ff0000" />
 
@@ -72,8 +84,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/Rosaclaro"
-            android:textColor="@color/Negro"
-            android:text="Ver clima actual" />
+            android:text="Ver clima actual"
+            android:textColor="@color/Negro" />
 
     </LinearLayout>
 

@@ -1,9 +1,11 @@
-package mx.itesm.jmggm.atizapan
+package mx.itesm.jmggm.atizapan.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import mx.itesm.jmggm.atizapan.BottomMenu
+import mx.itesm.jmggm.atizapan.R
 
 class SplashActivity : AppCompatActivity() {
     lateinit var handler: Handler

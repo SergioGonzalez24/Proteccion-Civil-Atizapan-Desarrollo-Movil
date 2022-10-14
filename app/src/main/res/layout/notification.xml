@@ -18,7 +18,7 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/image"
         android:text="Titulo"
-        android:textSize="50dp"/>
+        android:textSize="50dp" />
 
     <TextView
         android:id="@+id/message"
