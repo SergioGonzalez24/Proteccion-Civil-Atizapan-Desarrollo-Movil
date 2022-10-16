@@ -48,6 +48,16 @@
             android:name="Clima"
             app:argType="string" />
     </activity>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="mx.itesm.jmggm.atizapan.view.MainActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/signIn"
+        android:name="mx.itesm.jmggm.atizapan.view.SignIn"
+        android:label="activity_sign_in"
+        tools:layout="@layout/activity_sign_in" />
     <!--<activity
         android:id="@+id/settingsFragment"
         android:name="mx.itesm.jmggm.atizapan.view.GoogleSignInActivity"

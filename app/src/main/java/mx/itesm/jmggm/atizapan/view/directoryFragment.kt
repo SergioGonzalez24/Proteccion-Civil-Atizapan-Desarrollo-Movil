@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import mx.itesm.jmggm.atizapan.R
-import mx.itesm.jmggm.atizapan.model.User
+import mx.itesm.jmggm.atizapan.model.UserDirectorio
 import mx.itesm.jmggm.atizapan.databinding.FragmentDirectoryBinding
-import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
 
 class directoryFragment : Fragment() {
     private lateinit var binding: FragmentDirectoryBinding
-    private lateinit var departamentoList: ArrayList<User>
+    private lateinit var departamentoList: ArrayList<UserDirectorio>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +43,7 @@ class directoryFragment : Fragment() {
         )
         departamentoList = ArrayList()
         for(i in nombre.indices){
-            val departamento= User(nombre[i],telefono[i],imageID[i])
+            val departamento= UserDirectorio(nombre[i],telefono[i],imageID[i])
             departamentoList.add(departamento)
         }
 

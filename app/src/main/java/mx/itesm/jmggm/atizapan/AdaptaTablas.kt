@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import mx.itesm.jmggm.atizapan.model.User
+import mx.itesm.jmggm.atizapan.model.UserDirectorio
 
 //Clase para rellenar de manera correcta las tablas del directorio
-class AdaptaTablas(private val context : Activity,private val arrayList: ArrayList<User>) : ArrayAdapter<User>(context,
+class AdaptaTablas(private val context : Activity,private val arrayList: ArrayList<UserDirectorio>) : ArrayAdapter<UserDirectorio>(context,
 R.layout.list_item,arrayList) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {

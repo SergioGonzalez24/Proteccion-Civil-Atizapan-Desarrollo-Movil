@@ -81,7 +81,15 @@ class mainFragment : Fragment() {
             val accion4 = mainFragmentDirections.actionMainFragmentToClimaActivity("Ver Clima")
             findNavController().navigate(accion4)
         }
+
+        binding.btnEmergencia.setOnClickListener{
+            val llamaintent = Intent(Intent.ACTION_DIAL)
+            llamaintent.setData(Uri.parse("tel:911"))
+            startActivity(llamaintent)
+        }
     }
+
+
 
 }
 
