@@ -162,6 +162,21 @@
 
         </LinearLayout>
 
+        <ImageButton
+            android:id="@+id/regresar2"
+            android:layout_width="55dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#FBFAFA"
+            android:contentDescription="@string/todo"
+            android:scrollbarTrackHorizontal="@drawable/button1_bg"
+            app:srcCompat="@drawable/ic_back" />
+
     </RelativeLayout>
 
 

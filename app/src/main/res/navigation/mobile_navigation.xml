@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_mainFragment_to_climaActivity"
             app:destination="@id/climaActivity" />
+        <action
+            android:id="@+id/action_mainFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_mainFragment_to_signIn"
+            app:destination="@id/signIn" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragmentt"

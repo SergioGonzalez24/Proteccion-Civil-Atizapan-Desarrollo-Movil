@@ -87,6 +87,14 @@ class mainFragment : Fragment() {
             llamaintent.setData(Uri.parse("tel:911"))
             startActivity(llamaintent)
         }
+        binding.btnToLog.setOnClickListener {
+            val accion5=mainFragmentDirections.actionMainFragmentToMainActivity()
+            findNavController().navigate(accion5)
+        }
+        binding.btnToSign.setOnClickListener {
+            val accion5=mainFragmentDirections.actionMainFragmentToSignIn()
+            findNavController().navigate(accion5)
+        }
     }
 
 

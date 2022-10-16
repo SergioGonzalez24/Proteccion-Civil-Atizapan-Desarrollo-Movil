@@ -255,32 +255,23 @@
                     android:text="@string/text_signup_terms"
                     android:textSize="13sp" />
 
-
                 <LinearLayout
                     android:id="@+id/social_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/todo"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/logotec" />
 
-                        <ImageView
-                            android:layout_width="348dp"
-                            android:layout_height="41dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginBottom="32dp"
-                            android:contentDescription="@string/todo"
-                            android:scaleType="centerInside"
-                            app:srcCompat="@drawable/logotec" />
-
-
-                    </LinearLayout>
                 </LinearLayout>
 
 
@@ -288,12 +279,15 @@
 
             <ImageButton
                 android:id="@+id/regresar"
-                android:layout_width="49dp"
-                android:layout_height="38dp"
+                android:layout_width="55dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:background="#FBFAFA"
 
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="#FBFAFA"
                 android:contentDescription="@string/todo"
                 android:scrollbarTrackHorizontal="@drawable/button1_bg"
                 app:srcCompat="@drawable/ic_back" />
