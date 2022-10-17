@@ -198,7 +198,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/botonllamarPC"
+                        android:id="@+id/llamaPC"
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:layout_weight="1"
