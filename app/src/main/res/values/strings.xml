@@ -40,8 +40,10 @@
     <string name="todooo">TODO</string>
 
 
-
     <string name="dialog_one_style_title">Registro</string>
     <string name="one_style_title_dialog_tv">Registro</string>
+    <string name="title_activity_mapa_servicios">mapaServicios</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

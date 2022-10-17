@@ -95,6 +95,12 @@ class mainFragment : Fragment() {
             val accion5=mainFragmentDirections.actionMainFragmentToSignIn()
             findNavController().navigate(accion5)
         }
+
+        binding.btnServicios.setOnClickListener {
+            val mapaServicios = Intent(android.content.Intent.ACTION_VIEW)
+            mapaServicios.data= Uri.parse("https://www.google.com/maps/d/u/0/edit?mid=1qVCt320vGifhwgzOM5rHIZQAmbxVt-g&usp=sharing")
+            startActivity(mapaServicios)
+        }
     }
 
 

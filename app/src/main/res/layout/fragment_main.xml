@@ -125,6 +125,13 @@
             android:text="Ver clima actual"
             android:textColor="@color/Negro" />
 
+        <Button
+            android:id="@+id/btnServicios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/md_deep_purple_A100"
+            android:text="Servicios Proteccion Civil" />
+
     </LinearLayout>
 
 

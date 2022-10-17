@@ -4,6 +4,7 @@ plugins {
     //Para manejar los argumentos entre fragmentos
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {

@@ -12,8 +12,6 @@
         android:id="@+id/directoryFragment2"
         android:icon="@android:drawable/stat_sys_phone_call"
         android:title="Directorio"/>
-    <item
-        android:id="@+id/settingsFragment"
-        android:icon="@drawable/logout"
-        android:title="Cerrar Sesión" />
+
+
 </menu>
