@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@drawable/wallpaper"
     android:orientation="vertical"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
@@ -82,10 +82,12 @@
                             android:layout_marginLeft="12dp"
                             android:layout_marginRight="12dp"
                             android:background="@android:color/transparent"
+                            android:textColor="@color/Negro"
                             android:drawableStart="@drawable/ic_mail"
                             android:drawableLeft="@drawable/ic_mail"
                             android:drawablePadding="12dp"
                             android:hint="@string/hint_email"
+                            android:textColorHint="@color/Negro"
                             android:imeOptions="actionNext"
                             android:minWidth="320dp"
                             android:minHeight="45dp"
@@ -123,6 +125,8 @@
                             android:drawableLeft="@drawable/ic_lock"
                             android:drawablePadding="8dp"
                             android:hint="@string/hint_password"
+                            android:textColorHint="@color/Negro"
+                            android:textColor="@color/Negro"
                             android:imeOptions="actionNext"
                             android:inputType="textPassword"
                             android:minWidth="320dp"
@@ -153,10 +157,12 @@
                             android:layout_marginLeft="12dp"
                             android:layout_marginRight="12dp"
                             android:background="@android:color/transparent"
+                            android:textColor="@color/Negro"
                             android:drawableStart="@drawable/ic_person"
                             android:drawableLeft="@drawable/ic_person"
                             android:drawablePadding="2dp"
                             android:hint="@string/hint_fullName"
+                            android:textColorHint="@color/Negro"
                             android:imeOptions="actionNext"
                             android:minWidth="320dp"
                             android:minHeight="45dp"
@@ -188,13 +194,15 @@
                             android:layout_marginRight="12dp"
                             android:background="@android:color/transparent"
                             android:drawableStart="@drawable/ic_person"
+                            android:textColor="@color/Negro"
                             android:drawableLeft="@drawable/ic_person"
                             android:drawablePadding="12dp"
                             android:hint="@string/hint_direccion"
+                            android:textColorHint="@color/Negro"
                             android:imeOptions="actionNext"
                             android:minWidth="320dp"
                             android:minHeight="45dp"
-                            android:singleLine="true" />
+                            android:singleLine="false" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -211,6 +219,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColorHint="@color/Negro"
                         android:gravity="center"
                         app:hintEnabled="false">
 
@@ -221,11 +230,13 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="12dp"
                             android:layout_marginRight="12dp"
+                            android:textColor="@color/Negro"
                             android:background="@android:color/transparent"
                             android:drawableStart="@drawable/ic_phone"
                             android:drawableLeft="@drawable/ic_phone"
                             android:drawablePadding="12dp"
                             android:hint="@string/hint_phone"
+                            android:textColorHint="@color/Negro"
                             android:imeOptions="actionNext"
                             android:minWidth="320dp"
                             android:minHeight="45dp"
@@ -243,6 +254,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
+                    android:textColor="@color/Negro"
+                    android:background="@color/Azulclarito"
                     android:text="@string/button_sign_up2" />
 
                 <TextView

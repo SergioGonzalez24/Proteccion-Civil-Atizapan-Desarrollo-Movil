@@ -7,9 +7,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import mx.itesm.jmggm.atizapan.BottomMenu
-import mx.itesm.jmggm.atizapan.view.SignIn
 import mx.itesm.jmggm.atizapan.model.Login.User
 import mx.itesm.jmggm.atizapan.model.Login.UserResponse
 import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
@@ -21,6 +21,7 @@ private lateinit var viewModel : ActivityLoginBinding
 
 class MainActivity : AppCompatActivity() {
     private val quoteViewModel: MainActivityViewModel by viewModels()
+    var isloged: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.buttonSignin.setOnClickListener {
             if(viewModel.etUsername.text.toString().isEmpty()||viewModel.etPassword.text.toString().isEmpty()) {
-            alerta("Aviso", "Ningún campo puede estar vacío","ok")
+            alerta("Aviso", "Ningún campo puede estar vacío","ok", isloged = false)
             }
             else{
                 createUser()
-
             }
         }
         viewModel.buttonSignup.setOnClickListener{
@@ -47,22 +47,23 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.buttonSinRegistro.setOnClickListener{
             alerta2("Aviso","Al entrar sin registrarte, por motivos de seguridad no podrás generar reportes","Prefiero registrarme","ok")
-            //val x:Intent= Intent(this,SignIn::class.java)
-            //startActivity(x)
         }
-
-
 
     }
 
 
 
-    private fun alerta(titulo:String,mensaje:String,button:String){
+    private fun alerta(titulo:String,mensaje:String,button:String, isloged: Boolean){
         val dialog = AlertDialog.Builder(this)
             .setTitle(titulo)
             .setMessage(mensaje)
             .setNegativeButton(button) { view, _ ->
                 view.dismiss()
+
+                if (isloged == true ){
+                    val x:Intent= Intent(this, BottomMenu::class.java)
+                    startActivity(x)
+                }
             }
             .setCancelable(false)
             .create()
@@ -91,9 +92,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-
     private fun createUser() {
         val user  = User( viewModel.etUsername.text.toString() , viewModel.etPassword.text.toString())
         quoteViewModel.createNewUser(user)
@@ -106,12 +104,12 @@ class MainActivity : AppCompatActivity() {
             if(it  == null) {
                 Toast.makeText(this@MainActivity, "Error al iniciar sesión", Toast.LENGTH_LONG).show()
             } else {
-                //{"code":201,"meta":null,"data":{"id":2877,"name":"xxxxxaaaaabbbbb","email":"xxxxxaaaaabbbbb@gmail.com","gender":"male","status":"active"}}
+                if(it.estatus=="Credenciales exitosas"){
+                    isloged=true
+                    alerta("Aviso",it.estatus.toString(),"ok", isloged)
 
-                //viewModel.etUsername.setText(it.estatus)
-                //viewModel.etPassword.setText("")
-                alerta("Aviso",it.estatus.toString(),"ok" )
-                //Toast.makeText(this, "Working", Toast.LENGTH_LONG).apply {setGravity(Gravity,0,0); show() }
+                }
+                alerta("Aviso",it.estatus.toString(),"ok", isloged)
             }
         })
     }

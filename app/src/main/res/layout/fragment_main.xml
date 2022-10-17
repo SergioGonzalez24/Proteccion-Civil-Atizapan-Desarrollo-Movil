@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Azulclarito"
+    android:background="@drawable/wallpaper"
     tools:context=".view.mainFragment">
 
 
@@ -48,8 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="Log In"
-                    android:textAlignment="textEnd"
+                    android:text="Iniciar Sesión"
                     android:textColor="#1049CF"
                     android:textStyle="bold" />
 
@@ -58,9 +57,8 @@
                     style="@style/TextyButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="Sign In"
+                    android:text="Registrar"
                     android:textAlignment="textEnd"
                     android:textColor="#1049CF"
                     android:textStyle="bold" />
@@ -129,7 +127,8 @@
             android:id="@+id/btnServicios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/md_deep_purple_A100"
+            android:textColor="@color/Negro"
+            android:backgroundTint="@color/Azulclarito"
             android:text="Servicios Proteccion Civil" />
 
     </LinearLayout>

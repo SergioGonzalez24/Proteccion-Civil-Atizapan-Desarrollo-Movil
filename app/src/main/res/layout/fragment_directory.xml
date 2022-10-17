@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Azulclarito"
+    android:background="@drawable/wallpaper"
     tools:context=".view.directoryFragment">
 
     <ScrollView
@@ -70,16 +70,18 @@
                     <ImageButton
                         android:id="@+id/llamaBomberos"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
                         android:id="@+id/locaBomberos"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
@@ -135,16 +137,18 @@
                     <ImageButton
                         android:id="@+id/llamaPFC"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
                         android:id="@+id/locaPFC"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
@@ -200,16 +204,18 @@
                     <ImageButton
                         android:id="@+id/llamaPC"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
                         android:id="@+id/locaPC"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
@@ -265,16 +271,18 @@
                     <ImageButton
                         android:id="@+id/llamaEmergencias"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
                         android:id="@+id/locaEmergencias"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
@@ -330,16 +338,18 @@
                     <ImageButton
                         android:id="@+id/llamaCruzRoja"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
                         android:id="@+id/locaCruzRoja"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
@@ -395,16 +405,18 @@
                     <ImageButton
                         android:id="@+id/llamaSeguridadPublica"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
                         android:id="@+id/locaSeguridadPublica"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
@@ -414,7 +426,7 @@
             <LinearLayout
                 android:id="@+id/FugasGas"
                 android:layout_width="match_parent"
-                android:layout_height="82dp"
+                android:layout_height="87dp"
                 android:layout_marginVertical="10dp"
                 android:orientation="horizontal"
                 tools:ignore="MissingConstraints">
@@ -445,9 +457,9 @@
                         android:id="@+id/numero7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/Negro"
                         android:layout_marginTop="5dp"
-                        android:text="01 800 201 24 89" />
+                        android:text="01 800 201 24 89"
+                        android:textColor="@color/Negro" />
 
 
                 </LinearLayout>
@@ -460,16 +472,18 @@
                     <ImageButton
                         android:id="@+id/llamaFugaS"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
 
                     <ImageButton
                         android:id="@+id/locaFugaS"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:background="@color/white"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />
                 </LinearLayout>
@@ -525,7 +539,8 @@
                     <ImageButton
                         android:id="@+id/llamaFugaA"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
                         android:layout_weight="1"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/botonllamar" />
@@ -533,7 +548,8 @@
                     <ImageButton
                         android:id="@+id/locaFugA"
                         android:layout_width="match_parent"
-                        android:layout_height="38dp"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
                         android:layout_weight="1"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/location" />

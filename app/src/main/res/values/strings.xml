@@ -8,7 +8,7 @@
     <string name="title_notifications">Notifications</string>
     //Login Screen
     <string name="continue_google">Continuar con Google</string>
-    <string name="hint_username">Username</string>
+    <string name="hint_username">Correo</string>
     <string name="hint_fullName">Nombre completo</string>
     <string name="hint_direccion">Calle Num Colonia Cp</string>
 
@@ -32,7 +32,7 @@
     <string name="text_forgot_password_title">Olvidaste tu contraseña?, no te preocupes</string>
     <string name="text_forgot_password_message">Te enviaremos un link para resetear tu contraseña</string>
 
-    <string name="hint_email">Email</string>
+    <string name="hint_email">Correo</string>
     <string name="hint_phone">Teléfono</string>
     <string name="hint_confirm_password">Confirma tu contraseña</string>
     <string name="todo">TODO</string>

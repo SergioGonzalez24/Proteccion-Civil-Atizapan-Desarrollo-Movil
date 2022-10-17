@@ -1,18 +1,14 @@
 package mx.itesm.jmggm.atizapan.view
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import mx.itesm.jmggm.atizapan.BottomMenu
 import mx.itesm.jmggm.atizapan.model.Login.RetroInstance
 import mx.itesm.jmggm.atizapan.model.Login.RetroServiceInterface
 import mx.itesm.jmggm.atizapan.model.Login.RetroServiceInterface2
@@ -35,7 +31,7 @@ class SignIn : AppCompatActivity() {
 
     private val quoteViewModel: MainActivityViewModel2 by viewModels()
 
-    val isLogged=MutableLiveData<Boolean>()
+    var isLogged:Boolean=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ActivitySignInBinding.inflate(layoutInflater)
@@ -48,7 +44,9 @@ class SignIn : AppCompatActivity() {
             alerta("Aviso", "Ningún campo puede estar vacío","ok")
             }
             else{
-            createUserAdd()}
+                isLogged=true
+            createUserAdd()
+                }
         }
         viewModel.regresar.setOnClickListener {
             val x:Intent= Intent(this,MainActivity::class.java)
@@ -76,7 +74,7 @@ class SignIn : AppCompatActivity() {
                     if(response.isSuccessful) {
                         xx=response.body()
                         if (xx?.estatus=="Contraseña Incorecta"||xx?.estatus=="Credenciales exitosas"){
-
+                            isLogged=true
                             alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
 
                         }
@@ -98,7 +96,7 @@ class SignIn : AppCompatActivity() {
 
 
 
-    private fun alerta(titulo:String,mensaje:String,button:String){
+    private fun alerta(titulo:String,mensaje:String,button:String) {
         val dialog = AlertDialog.Builder(this)
             .setTitle(titulo)
             .setMessage(mensaje)

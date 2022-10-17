@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
+import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
 //import mx.itesm.jmggm.atizapan.mainFragmentDirections
 import mx.itesm.jmggm.atizapan.viewmodel.MainVM
 import java.util.jar.Manifest
@@ -28,6 +29,10 @@ class mainFragment : Fragment() {
 
     private val viewModel:MainVM by viewModels()
     private lateinit var binding: FragmentMainBinding
+    private val checkLog:SignIn = SignIn()
+    private val checkLog2:MainActivity = MainActivity()
+    private val viewModel3: MainActivityViewModel by viewModels()
+    var isloged: Boolean = false
     //private var temp:Double?=null
 
     // Código para solicitar permiso de usar la ubicación
@@ -63,18 +68,32 @@ class mainFragment : Fragment() {
 
 
 
+
     private fun registrarEventos() {
+        viewModel3.isloged.observe(viewLifecycleOwner){
+            isloged=it
+            println(isloged)
+        }
         binding.btnPolice.setOnClickListener {
-            val accion = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Policia")
-            findNavController().navigate(accion)
+            if (isloged){
+                val accion = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Policia")
+                findNavController().navigate(accion)
+            }
+            else {}
         }
         binding.btnFire.setOnClickListener {
-            val accion2 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Bomberos")
-            findNavController().navigate(accion2)
+            if(isloged){
+                val accion2 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Bomberos")
+                findNavController().navigate(accion2)
+            }
+            else{}
         }
         binding.btnHealth.setOnClickListener {
-            val accion3 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Ambulancia")
-            findNavController().navigate(accion3)
+            if(isloged){
+                val accion3 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Ambulancia")
+                findNavController().navigate(accion3)
+            }
+            else{}
         }
 
         binding.btnClima.setOnClickListener {

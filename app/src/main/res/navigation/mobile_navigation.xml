@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="mx.itesm.jmggm.atizapan.view.mainFragment"
-        android:label="Atizapan de Zaragoza"
+        android:label="Atizapán de Zaragoza"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_alertMapFragment"
@@ -58,12 +58,12 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="mx.itesm.jmggm.atizapan.view.MainActivity"
-        android:label="activity_login"
+        android:label="Atizapán"
         tools:layout="@layout/activity_login" />
     <activity
         android:id="@+id/signIn"
         android:name="mx.itesm.jmggm.atizapan.view.SignIn"
-        android:label="activity_sign_in"
+        android:label="Atizapán"
         tools:layout="@layout/activity_sign_in" />
     <!--<activity
         android:id="@+id/settingsFragment"

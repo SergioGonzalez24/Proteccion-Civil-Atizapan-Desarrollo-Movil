@@ -17,10 +17,12 @@ import retrofit2.Response
 
 
 class MainActivityViewModel: ViewModel() {
+    val isloged=MutableLiveData<Boolean>(false)
     lateinit var createNewUserLiveData: MutableLiveData<UserResponse?>
     init {
         createNewUserLiveData = MutableLiveData()
     }
+    var isLooged:Boolean=false
 
     fun getCreateNewUserObserver(): MutableLiveData<UserResponse?> {
         return createNewUserLiveData
@@ -39,6 +41,8 @@ class MainActivityViewModel: ViewModel() {
 
                 override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                     if(response.isSuccessful) {
+                        isloged.value=true
+                        println(isloged)
                         createNewUserLiveData.postValue(response.body())
                     } else {
                         createNewUserLiveData.postValue(null)

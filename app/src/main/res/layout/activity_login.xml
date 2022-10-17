@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
     tools:context=".view.MainActivity">
 
     <RelativeLayout
@@ -12,6 +13,7 @@
         android:orientation="vertical"
         android:scrollbarThumbHorizontal="@null"
         android:scrollbarThumbVertical="@null"
+
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
@@ -67,6 +69,8 @@
                         android:drawableStart="@drawable/ic_person"
                         android:drawablePadding="12dp"
                         android:hint="@string/hint_username"
+                        android:textColorHint="@color/Negro"
+                        android:textColor="@color/Negro"
                         android:imeOptions="actionNext"
                         android:minWidth="320dp"
                         android:minHeight="50dp"
@@ -99,6 +103,8 @@
                         android:layout_marginRight="12dp"
                         android:autofillHints=""
                         android:background="@android:color/transparent"
+                        android:textColorHint="@color/Negro"
+                        android:textColor="@color/Negro"
                         android:drawableStart="@drawable/ic_lock"
                         android:drawablePadding="12dp"
                         android:hint="@string/hint_password"
