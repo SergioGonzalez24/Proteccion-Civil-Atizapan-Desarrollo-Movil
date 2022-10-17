@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import mx.itesm.jmggm.atizapan.BottomMenu
 import mx.itesm.jmggm.atizapan.view.SignIn
 import mx.itesm.jmggm.atizapan.model.Login.User
 import mx.itesm.jmggm.atizapan.model.Login.UserResponse
@@ -20,6 +21,7 @@ private lateinit var viewModel : ActivityLoginBinding
 
 class MainActivity : AppCompatActivity() {
     private val quoteViewModel: MainActivityViewModel by viewModels()
+    private
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,10 @@ class MainActivity : AppCompatActivity() {
             if(viewModel.etUsername.text.toString().isEmpty()||viewModel.etPassword.text.toString().isEmpty()) {
             alerta("Aviso", "Ningún campo puede estar vacío","ok")
             }
-            else{ createUser()}
+            else{
+                createUser()
+
+            }
         }
         viewModel.buttonSignup.setOnClickListener{
 
@@ -50,6 +55,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 
 
     private fun alerta(titulo:String,mensaje:String,button:String){

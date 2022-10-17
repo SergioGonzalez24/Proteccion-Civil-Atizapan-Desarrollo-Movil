@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import mx.itesm.jmggm.atizapan.BottomMenu
 import mx.itesm.jmggm.atizapan.model.Login.RetroInstance
 import mx.itesm.jmggm.atizapan.model.Login.RetroServiceInterface
 import mx.itesm.jmggm.atizapan.model.Login.RetroServiceInterface2
@@ -33,6 +35,7 @@ class SignIn : AppCompatActivity() {
 
     private val quoteViewModel: MainActivityViewModel2 by viewModels()
 
+    val isLogged=MutableLiveData<Boolean>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ActivitySignInBinding.inflate(layoutInflater)
@@ -75,20 +78,33 @@ class SignIn : AppCompatActivity() {
                         if (xx?.estatus=="contraseña incorecta"||xx?.estatus=="Credenciales exitosas"){
 
                             alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
+                            getBool(true)
+
+
 
                         }
                         else{
 
                             val user  = UserAdd( viewModel.etMail.text.toString() ,viewModel.etFullName.text.toString(),viewModel.etPassword.text.toString(),viewModel.etUsername.text.toString(),viewModel.etPhone.text.toString())
                             quoteViewModel.createNewUser(user)
+                            getBool(false)
+
                         }
 
                     } else {
                         xx=null
+                        getBool(false)
+
                     }
                 }
             })
 
+    }
+
+    private fun getBool(b: Boolean) {
+        val intent = Intent(this, BottomMenu::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun alerta(titulo:String,mensaje:String,button:String){
