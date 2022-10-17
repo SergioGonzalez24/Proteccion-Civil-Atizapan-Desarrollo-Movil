@@ -21,7 +21,6 @@ private lateinit var viewModel : ActivityLoginBinding
 
 class MainActivity : AppCompatActivity() {
     private val quoteViewModel: MainActivityViewModel by viewModels()
-    private
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

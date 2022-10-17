@@ -75,25 +75,20 @@ class SignIn : AppCompatActivity() {
                 override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                     if(response.isSuccessful) {
                         xx=response.body()
-                        if (xx?.estatus=="contraseña incorecta"||xx?.estatus=="Credenciales exitosas"){
+                        if (xx?.estatus=="Contraseña Incorecta"||xx?.estatus=="Credenciales exitosas"){
 
                             alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
-                            getBool(true)
-
-
 
                         }
                         else{
 
                             val user  = UserAdd( viewModel.etMail.text.toString() ,viewModel.etFullName.text.toString(),viewModel.etPassword.text.toString(),viewModel.etUsername.text.toString(),viewModel.etPhone.text.toString())
                             quoteViewModel.createNewUser(user)
-                            getBool(false)
 
                         }
 
                     } else {
                         xx=null
-                        getBool(false)
 
                     }
                 }
@@ -101,11 +96,7 @@ class SignIn : AppCompatActivity() {
 
     }
 
-    private fun getBool(b: Boolean) {
-        val intent = Intent(this, BottomMenu::class.java)
-        startActivity(intent)
-        finish()
-    }
+
 
     private fun alerta(titulo:String,mensaje:String,button:String){
         val dialog = AlertDialog.Builder(this)
@@ -128,12 +119,9 @@ class SignIn : AppCompatActivity() {
             if(it  == null) {
                 Toast.makeText(this@SignIn, "Error al iniciar sesión", Toast.LENGTH_LONG).show()
             } else {
-                //{"code":201,"meta":null,"data":{"id":2877,"name":"xxxxxaaaaabbbbb","email":"xxxxxaaaaabbbbb@gmail.com","gender":"male","status":"active"}}
 
-                //viewModel.etUsername.setText(it.estatus)
-                //viewModel.etPassword.setText("")
                 alerta2("Aviso",it.estatus.toString(),"ok" )
-                //Toast.makeText(this, "Working", Toast.LENGTH_LONG).apply {setGravity(Gravity,0,0); show() }
+
             }
         })
     }
@@ -154,9 +142,4 @@ class SignIn : AppCompatActivity() {
         dialog.show()
 
     }
-
-
-
-
-
 }

@@ -1,7 +1,10 @@
 package mx.itesm.jmggm.atizapan.viewmodel
 
+import android.content.Intent
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import mx.itesm.jmggm.atizapan.BottomMenu
 import mx.itesm.jmggm.atizapan.model.Login.RetroInstance
 import mx.itesm.jmggm.atizapan.model.Login.RetroServiceInterface
 
@@ -43,6 +46,8 @@ class MainActivityViewModel: ViewModel() {
                 }
             })
         }
+
+
 
 
 }
