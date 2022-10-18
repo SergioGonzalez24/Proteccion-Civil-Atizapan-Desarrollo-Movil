@@ -1,15 +1,15 @@
 package mx.itesm.jmggm.atizapan.view
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.fragment.findNavController
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
@@ -17,7 +17,6 @@ import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
 import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
 //import mx.itesm.jmggm.atizapan.mainFragmentDirections
 import mx.itesm.jmggm.atizapan.viewmodel.MainVM
-import java.util.jar.Manifest
 
 
 /**
@@ -70,11 +69,17 @@ class mainFragment : Fragment() {
 
 
     private fun registrarEventos() {
-        viewModel3.isloged.observe(viewLifecycleOwner){
+        viewModel3._isloged.observe(viewLifecycleOwner, Observer {
+                isloged=it
+                println("Prueba registrar eventos${isloged}")
+        })
+       /* println("variable antes de binding${isloged}")
+        checkLog2.isLoged.observe(viewLifecycleOwner){
             isloged=it
-            println(isloged)
-        }
+            println("Prueba Lo que sea${isloged}")
+        }*/
         binding.btnPolice.setOnClickListener {
+            println("Fer lo hizo bien${checkLog2.isloged}")
             if (isloged){
                 val accion = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Policia")
                 findNavController().navigate(accion)
@@ -122,7 +127,15 @@ class mainFragment : Fragment() {
         }
     }
 
+    /*override fun onSaveInstanceState(guardarEstado: Bundle) {
+        super.onSaveInstanceState(guardarEstado)
+        guardarEstado.putBoolean("variable", isloged!!)
+    }
 
+    override fun onRestoreInstanceState(recEstado: Bundle) {
+        super.onRestoreInstanceState(recEstado)
+        isloged = recEstado.getBoolean("variable")
+    }*/
 
 }
 

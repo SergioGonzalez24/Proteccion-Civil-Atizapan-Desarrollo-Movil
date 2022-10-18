@@ -8,7 +8,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.SavedStateHandle
 import mx.itesm.jmggm.atizapan.BottomMenu
 import mx.itesm.jmggm.atizapan.model.Login.User
 import mx.itesm.jmggm.atizapan.model.Login.UserResponse
@@ -20,8 +23,11 @@ import mx.itesm.jmggm.atizapan.databinding.ActivityLoginBinding
 private lateinit var viewModel : ActivityLoginBinding
 
 class MainActivity : AppCompatActivity() {
+    //private val _isloged=MutableLiveData<Boolean>(state["Logueado"]?:false)
+    //val isLOGED: LiveData<Boolean> get()=_isloged
     private val quoteViewModel: MainActivityViewModel by viewModels()
-    var isloged: Boolean = false
+    var isloged: Boolean? = null
+    val isLoged = MutableLiveData<Boolean>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -106,12 +112,25 @@ class MainActivity : AppCompatActivity() {
             } else {
                 if(it.estatus=="Credenciales exitosas"){
                     isloged=true
-                    alerta("Aviso",it.estatus.toString(),"ok", isloged)
+                    isLoged.value=true
+                    println("PruebaFer${isloged}")
+                    alerta("Aviso",it.estatus.toString(),"ok", isloged!!)
 
                 }
-                alerta("Aviso",it.estatus.toString(),"ok", isloged)
+                alerta("Aviso",it.estatus.toString(),"ok", isloged!!)
             }
         })
+    }
+
+
+    override fun onSaveInstanceState(guardarEstado: Bundle) {
+        super.onSaveInstanceState(guardarEstado)
+        guardarEstado.putBoolean("variable", isloged!!)
+    }
+
+    override fun onRestoreInstanceState(recEstado: Bundle) {
+        super.onRestoreInstanceState(recEstado)
+        isloged = recEstado.getBoolean("variable")
     }
 
 }
