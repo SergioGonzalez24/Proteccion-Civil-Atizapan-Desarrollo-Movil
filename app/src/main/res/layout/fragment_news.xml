@@ -5,19 +5,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper"
     tools:context=".view.newsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <WebView
+        android:id="@+id/noticiasview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp" />
 
-        <TextView
-            android:id="@+id/hola"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Aquí ira la sección de noticias"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-    </LinearLayout>
 
 </FrameLayout>
