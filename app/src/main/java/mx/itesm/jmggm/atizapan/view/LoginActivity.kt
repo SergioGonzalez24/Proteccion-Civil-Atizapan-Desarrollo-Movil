@@ -1,6 +1,7 @@
 package mx.itesm.jmggm.atizapan.view
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -26,14 +27,15 @@ class MainActivity : AppCompatActivity() {
     //private val _isloged=MutableLiveData<Boolean>(state["Logueado"]?:false)
     //val isLOGED: LiveData<Boolean> get()=_isloged
     private val quoteViewModel: MainActivityViewModel by viewModels()
-    var isloged: Boolean? = null
-    val isLoged = MutableLiveData<Boolean>()
+    var isloged: Boolean = false
+//    val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
+//    val editor= prefs.edit()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ActivityLoginBinding.inflate(layoutInflater)
         val view = viewModel.root
-
         setContentView(view)
         initViewModel()
 
@@ -54,6 +56,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.buttonSinRegistro.setOnClickListener{
             alerta2("Aviso","Al entrar sin registrarte, por motivos de seguridad no podrás generar reportes","Prefiero registrarme","ok")
         }
+//        val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
+//        val editor= prefs.edit()
+//        editor.putBoolean("log",isloged)
+//        editor.commit()
 
     }
 
@@ -112,7 +118,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 if(it.estatus=="Credenciales exitosas"){
                     isloged=true
-                    isLoged.value=true
+                    val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
+                    val editor= prefs.edit()
+                    editor.putBoolean("log",isloged)
+                    editor.commit()
                     println("PruebaFer${isloged}")
                     alerta("Aviso",it.estatus.toString(),"ok", isloged!!)
 

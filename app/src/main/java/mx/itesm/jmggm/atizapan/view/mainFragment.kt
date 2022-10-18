@@ -1,5 +1,6 @@
 package mx.itesm.jmggm.atizapan.view
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -30,8 +31,12 @@ class mainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private val checkLog:SignIn = SignIn()
     private val checkLog2:MainActivity = MainActivity()
-    private val viewModel3: MainActivityViewModel by viewModels()
-    var isloged: Boolean = false
+    private val viewModel3 by viewModels<MainActivityViewModel>()
+//    val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
+//    var isloged=prefs?.getBoolean("log",false)
+    var ISLOGED:Boolean=false
+
+
     //private var temp:Double?=null
 
     // Código para solicitar permiso de usar la ubicación
@@ -50,14 +55,27 @@ class mainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         // Inflate the layout for this fragment
+
+//        viewModel3.isloged.observe(viewLifecycleOwner, Observer {
+//            println("A ver qu epasa")
+//            println(it)
+//            isloged=it
+//            println("Prueba registrar eventos ${isloged}")
+//        })
         binding=FragmentMainBinding.inflate((layoutInflater))
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
+        val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
+        var isloged=prefs?.getBoolean("log",false)
+        println(isloged)
+        ISLOGED=isloged!!
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,32 +87,28 @@ class mainFragment : Fragment() {
 
 
     private fun registrarEventos() {
-        viewModel3._isloged.observe(viewLifecycleOwner, Observer {
-                isloged=it
-                println("Prueba registrar eventos${isloged}")
-        })
+
        /* println("variable antes de binding${isloged}")
         checkLog2.isLoged.observe(viewLifecycleOwner){
             isloged=it
             println("Prueba Lo que sea${isloged}")
         }*/
         binding.btnPolice.setOnClickListener {
-            println("Fer lo hizo bien${checkLog2.isloged}")
-            if (isloged){
+            if (ISLOGED){
                 val accion = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Policia")
                 findNavController().navigate(accion)
             }
             else {}
         }
         binding.btnFire.setOnClickListener {
-            if(isloged){
+            if(ISLOGED){
                 val accion2 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Bomberos")
                 findNavController().navigate(accion2)
             }
             else{}
         }
         binding.btnHealth.setOnClickListener {
-            if(isloged){
+            if(ISLOGED){
                 val accion3 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Ambulancia")
                 findNavController().navigate(accion3)
             }

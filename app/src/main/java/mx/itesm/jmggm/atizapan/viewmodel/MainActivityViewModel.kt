@@ -1,5 +1,6 @@
 package mx.itesm.jmggm.atizapan.viewmodel
 
+import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
@@ -18,18 +19,28 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class MainActivityViewModel(private val state: SavedStateHandle): ViewModel() {
-    val _isloged=MutableLiveData<Boolean>(state["Logueado"]?:false)
-    val isloged: LiveData<Boolean> get()=_isloged
+class MainActivityViewModel(): ViewModel() {
+
+//    val prefe= getSharedPreferences("matriculas", Context.MODE_PRIVATE)
+//    val editor= prefe.edit()
+//    editor.putBoolean("mat", alumno?.matricula)
+//    editor.commit()
+//    activity
+//    //Otra act
+//    val prefe= getSharedPreferences("matricula", Context.MODE_PRIVATE)
+//    m=prefe.getBoolen("mat","-")
+//    println("Matricula")
+
+
     lateinit var createNewUserLiveData: MutableLiveData<UserResponse?>
     init {
         createNewUserLiveData = MutableLiveData()
     }
-    var isLooged:Boolean=false
 
     fun getCreateNewUserObserver(): MutableLiveData<UserResponse?> {
         return createNewUserLiveData
     }
+
 
 
 
@@ -44,11 +55,6 @@ class MainActivityViewModel(private val state: SavedStateHandle): ViewModel() {
 
                 override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                     if(response.isSuccessful) {
-                        _isloged.value=true
-                        state["Logueado"]=_isloged.value
-                        println("Prueba youtube ${_isloged}")
-                        isLooged=true
-                        println(isLooged)
                         createNewUserLiveData.postValue(response.body())
                     } else {
                         createNewUserLiveData.postValue(null)
