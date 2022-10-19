@@ -14,9 +14,9 @@
         android:title="Directorio"/>
 
     <item
-        android:id="@+id/SignOut"
+        android:id="@+id/signOutFragment"
         android:icon="@drawable/logout"
-        android:title="SignOut" />
+        android:title="Cerrar Sesión" />
 
 
 

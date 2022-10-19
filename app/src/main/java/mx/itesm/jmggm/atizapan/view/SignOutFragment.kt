@@ -13,10 +13,7 @@ import mx.itesm.jmggm.atizapan.databinding.FragmentSignOutBinding
 
 class SignOutFragment : Fragment() {
     private lateinit var binding:FragmentSignOutBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        registrarEventos()
-    }
+    var isloged:Boolean=false
 
 
     override fun onCreateView(
@@ -28,9 +25,17 @@ class SignOutFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registrarEventos()
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding=FragmentSignOutBinding.inflate(layoutInflater)
+    }
     private fun registrarEventos() {
         binding.btnSignOut.setOnClickListener {
-            var isloged:Boolean=false
+            isloged=false
             val prefs= activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
             val editor= prefs?.edit()
             editor?.putBoolean("log",isloged)

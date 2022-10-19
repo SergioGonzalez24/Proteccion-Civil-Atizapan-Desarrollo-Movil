@@ -25,7 +25,8 @@
 
     </fragment>
     <fragment
-        android:id="@+id/SignOut"
+        android:id="@+id/signOutFragment"
+        android:name="mx.itesm.jmggm.atizapan.view.SignOutFragment"
         android:label="Cerrar Sesión"
         tools:layout="@layout/fragment_sign_out" />
     <fragment
