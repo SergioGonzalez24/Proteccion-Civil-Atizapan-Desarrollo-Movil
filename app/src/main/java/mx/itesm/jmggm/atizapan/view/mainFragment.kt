@@ -35,6 +35,7 @@ class mainFragment : Fragment() {
 //    val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
 //    var isloged=prefs?.getBoolean("log",false)
     var ISLOGED:Boolean=false
+    var ISLOGED2:Boolean=false
 
 
     //private var temp:Double?=null
@@ -73,9 +74,11 @@ class mainFragment : Fragment() {
         super.onStart()
         val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
         var isloged=prefs?.getBoolean("log",false)
-        println(isloged)
-        ISLOGED=isloged!!
-
+        val prefs2=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
+        var isloged2=prefs2?.getBoolean("log",false)
+        if(isloged!!||isloged2!!){
+            ISLOGED=true
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,6 +1,7 @@
 package mx.itesm.jmggm.atizapan.view
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -31,7 +32,7 @@ class SignIn : AppCompatActivity() {
 
     private val quoteViewModel: MainActivityViewModel2 by viewModels()
 
-    var isLogged:Boolean=false
+    var isloged:Boolean=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ActivitySignInBinding.inflate(layoutInflater)
@@ -44,7 +45,11 @@ class SignIn : AppCompatActivity() {
             alerta("Aviso", "Ningún campo puede estar vacío","ok")
             }
             else{
-                isLogged=true
+                isloged=true
+                val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
+                val editor= prefs.edit()
+                editor.putBoolean("log",isloged)
+                editor.commit()
             createUserAdd()
                 }
         }

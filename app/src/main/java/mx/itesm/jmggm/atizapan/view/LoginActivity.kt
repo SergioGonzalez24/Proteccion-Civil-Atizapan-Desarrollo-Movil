@@ -122,7 +122,6 @@ class MainActivity : AppCompatActivity() {
                     val editor= prefs.edit()
                     editor.putBoolean("log",isloged)
                     editor.commit()
-                    println("PruebaFer${isloged}")
                     alerta("Aviso",it.estatus.toString(),"ok", isloged!!)
 
                 }
