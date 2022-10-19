@@ -12,10 +12,10 @@ import com.google.android.gms.maps.GoogleMap
 import mx.itesm.jmggm.atizapan.databinding.FragmentDirectoryBinding
 
 
-class directoryFragment : Fragment(), GoogleMap.OnMyLocationChangeListener {
+class directoryFragment : Fragment() /*,GoogleMap.OnMyLocationChangeListener*/ {
     private lateinit var binding: FragmentDirectoryBinding
-    private lateinit var map:GoogleMap
-    private lateinit var position: Location
+    /*private lateinit var map:GoogleMap
+    private lateinit var position: Location*/
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,13 +36,13 @@ class directoryFragment : Fragment(), GoogleMap.OnMyLocationChangeListener {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        map.setOnMyLocationChangeListener {
-            this.position=it
-            println("Cambio posicion")
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        map.setOnMyLocationChangeListener {
+//            this.position=it
+//            println("Cambio posicion")
+//        }
+//    }
     private fun RegistraEventos() {
         //Bomberos
         binding.llamaBomberos.setOnClickListener {
@@ -126,14 +126,13 @@ class directoryFragment : Fragment(), GoogleMap.OnMyLocationChangeListener {
             startActivity(locaintent8)
         }
         binding.btnSolicitarBomberos.setOnClickListener {
-            println(position)
+//            println(position)
         }
 
     }
-    override fun onMyLocationChange(location: Location) {
-
-
-        this.position=location
-    }
+//    override fun onMyLocationChange(location: Location) {
+//
+//
+//        this.position=location
 
 }

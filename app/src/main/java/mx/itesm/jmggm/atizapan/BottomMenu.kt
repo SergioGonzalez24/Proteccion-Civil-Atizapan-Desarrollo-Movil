@@ -52,4 +52,5 @@ class BottomMenu : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+
 }

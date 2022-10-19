@@ -10,6 +10,7 @@ import android.os.Build
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.google.firebase.messaging.ktx.messaging
@@ -23,12 +24,11 @@ const val  CHANNEL_NAME = "mx.itesm.jmggm.atizapan"
 class MyFirebaseMessagingService :  FirebaseMessagingService()  {
 
     //Generar notificacion
+
     private fun generateNotification(title: String, message: String){
         val intent = Intent(this, BottomMenu::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-
         var pendingIntent : PendingIntent
-        //var pendingIntent =   PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             pendingIntent  = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)

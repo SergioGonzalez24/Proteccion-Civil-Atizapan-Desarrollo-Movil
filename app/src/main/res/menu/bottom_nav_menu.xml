@@ -12,7 +12,12 @@
         android:id="@+id/directoryFragment2"
         android:icon="@android:drawable/stat_sys_phone_call"
         android:title="Directorio"/>
-    <item android:title="SignOut" />
+
+    <item
+        android:id="@+id/SignOut"
+        android:icon="@drawable/logout"
+        android:title="SignOut" />
+
 
 
 </menu>

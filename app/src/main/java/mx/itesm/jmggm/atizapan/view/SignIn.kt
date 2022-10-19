@@ -13,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import mx.itesm.jmggm.atizapan.R
 import mx.itesm.jmggm.atizapan.model.Login.RetroInstance
 import mx.itesm.jmggm.atizapan.model.Login.RetroServiceInterface
@@ -43,7 +44,7 @@ class SignIn : AppCompatActivity() {
         val view = viewModel.root
 
         setContentView(view)
-        initViewModel(){
+        initViewModel()
         viewModel.buttonConfirmarregistro.setOnClickListener {
             if(viewModel.etMail.text.toString().isEmpty()||viewModel.etPassword.text.toString().isEmpty()||viewModel.etFullName.text.toString().isEmpty()||viewModel.etUsername.text.toString().isEmpty()||viewModel.etPhone.text.toString().isEmpty()) {
                 alerta("Aviso", "Ningún campo puede estar vacío","ok")
@@ -85,23 +86,6 @@ class SignIn : AppCompatActivity() {
                     xx=response.body()
                     if (xx?.estatus=="Contraseña Incorecta"||xx?.estatus=="Credenciales exitosas"){
                         alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
-
-                override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                    if(response.isSuccessful) {
-                        xx=response.body()
-                        if (xx?.estatus=="Contraseña Incorecta"||xx?.estatus=="Credenciales exitosas"){
-                            alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
-
-                        }
-                        else{
-
-                            val user  = UserAdd( viewModel.etMail.text.toString() ,viewModel.etFullName.text.toString(),viewModel.etPassword.text.toString(),viewModel.etUsername.text.toString(),viewModel.etPhone.text.toString())
-                            quoteViewModel.createNewUser(user)
-
-                        }
-
-                    } else {
-                        xx=null
 
                     }
                     else{

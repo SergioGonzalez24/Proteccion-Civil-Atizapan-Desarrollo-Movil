@@ -14,6 +14,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.ktx.messaging
 import mx.itesm.jmggm.atizapan.BottomMenu
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
@@ -61,14 +63,7 @@ class mainFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-        // Inflate the layout for this fragment
 
-//        viewModel3.isloged.observe(viewLifecycleOwner, Observer {
-//            println("A ver qu epasa")
-//            println(it)
-//            isloged=it
-//            println("Prueba registrar eventos ${isloged}")
-//        })
         binding=FragmentMainBinding.inflate((layoutInflater))
         return binding.root
     }
@@ -82,6 +77,24 @@ class mainFragment : Fragment() {
         if(isloged!!||isloged2!!){
             ISLOGED=true
         }
+        //Topicosuscribir
+        Firebase.messaging.subscribeToTopic("alertasAtizapan")
+            .addOnCompleteListener{ task ->
+                var msg = "Suscrito"
+                if (!task.isSuccessful){
+                    msg = "Suscripcion fallida"
+                    val suscribir= activity?.getSharedPreferences("suscrito", Context.MODE_PRIVATE)
+                    val editor= suscribir?.edit()
+                    if (editor != null) {
+                        editor.putString("sus",msg)
+                    }
+                    if (editor != null) {
+                        editor.commit()
+                    }
+                }
+                println(msg)
+            }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -166,5 +179,7 @@ class mainFragment : Fragment() {
 
         dialog.show()
 
+
     }
+
 }
