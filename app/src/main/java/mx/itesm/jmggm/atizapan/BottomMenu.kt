@@ -1,5 +1,6 @@
 package mx.itesm.jmggm.atizapan
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -16,8 +17,6 @@ class BottomMenu : AppCompatActivity() {
 
     private lateinit var binding: ActivityBottomMenuBinding
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,7 +29,10 @@ class BottomMenu : AppCompatActivity() {
             }
             val token = task.result
             Log.d("PUSH_TOKEN", "pushToken: $token")
-
+            val prefs= getSharedPreferences("tokenotif", Context.MODE_PRIVATE)
+            val editor= prefs.edit()
+            editor.putString("tok",token)
+            editor.commit()
         }
 
         val navView: BottomNavigationView = binding.navView

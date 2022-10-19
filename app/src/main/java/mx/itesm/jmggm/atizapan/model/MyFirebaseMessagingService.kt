@@ -9,8 +9,10 @@ import android.content.Intent
 import android.os.Build
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.google.firebase.messaging.ktx.messaging
 import mx.itesm.jmggm.atizapan.BottomMenu
 import mx.itesm.jmggm.atizapan.R
 
@@ -55,6 +57,7 @@ class MyFirebaseMessagingService :  FirebaseMessagingService()  {
         }
 
         notificationManager.notify(0, builder.build())
+
     }
 
     @SuppressLint("RemoteViewLayout")
@@ -66,6 +69,7 @@ class MyFirebaseMessagingService :  FirebaseMessagingService()  {
 
         return remoteView
     }
+
 
     //mostrar la notificacion
     override fun onMessageReceived(message: RemoteMessage) {

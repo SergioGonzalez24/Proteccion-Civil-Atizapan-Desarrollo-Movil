@@ -35,7 +35,7 @@ class mainFragment : Fragment() {
     private val checkLog:SignIn = SignIn()
     private val checkLog2:MainActivity = MainActivity()
     private val viewModel3 by viewModels<MainActivityViewModel>()
-//    val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
+    //    val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
 //    var isloged=prefs?.getBoolean("log",false)
     var ISLOGED:Boolean=false
     var ISLOGED2:Boolean=false
@@ -148,7 +148,7 @@ class mainFragment : Fragment() {
     }
 
     private fun alerta2(titulo:String,mensaje:String,button:String,button2: String){
-        val dialog = AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this.requireContext())
             .setTitle(titulo)
             .setMessage(mensaje)
             .setNegativeButton(button) { view, _ ->
@@ -168,4 +168,3 @@ class mainFragment : Fragment() {
 
     }
 }
-

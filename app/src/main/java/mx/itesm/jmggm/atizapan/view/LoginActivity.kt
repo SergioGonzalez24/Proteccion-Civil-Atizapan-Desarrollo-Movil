@@ -3,7 +3,10 @@ package mx.itesm.jmggm.atizapan.view
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -13,7 +16,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.SavedStateHandle
+import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import mx.itesm.jmggm.atizapan.BottomMenu
+import mx.itesm.jmggm.atizapan.R
 import mx.itesm.jmggm.atizapan.model.Login.User
 import mx.itesm.jmggm.atizapan.model.Login.UserResponse
 import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
@@ -24,12 +29,10 @@ import mx.itesm.jmggm.atizapan.databinding.ActivityLoginBinding
 private lateinit var viewModel : ActivityLoginBinding
 
 class MainActivity : AppCompatActivity() {
-    //private val _isloged=MutableLiveData<Boolean>(state["Logueado"]?:false)
-    //val isLOGED: LiveData<Boolean> get()=_isloged
+    lateinit var dialogx:AlertDialog
     private val quoteViewModel: MainActivityViewModel by viewModels()
     var isloged: Boolean = false
-//    val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
-//    val editor= prefs.edit()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             alerta("Aviso", "Ningún campo puede estar vacío","ok", isloged = false)
             }
             else{
+                cargarcirculo()
                 createUser()
             }
         }
@@ -56,11 +60,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.buttonSinRegistro.setOnClickListener{
             alerta2("Aviso","Al entrar sin registrarte, por motivos de seguridad no podrás generar reportes","Prefiero registrarme","ok")
         }
-//        val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
-//        val editor= prefs.edit()
-//        editor.putBoolean("log",isloged)
-//        editor.commit()
-
     }
 
 
@@ -112,10 +111,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViewModel() {
         quoteViewModel.getCreateNewUserObserver().observe(this, Observer <UserResponse?>{
-
             if(it  == null) {
+                Thread.sleep(3000)
+                val circularProgressBar = findViewById<CircularProgressBar>(R.id.circularProgressBar3)
+                circularProgressBar.visibility=View.INVISIBLE
+                val textoProgressBar = findViewById<TextView>(R.id.cargando)
+                textoProgressBar.visibility=View.INVISIBLE
                 Toast.makeText(this@MainActivity, "Error al iniciar sesión", Toast.LENGTH_LONG).show()
             } else {
+                Thread.sleep(3000)
+                val circularProgressBar = findViewById<CircularProgressBar>(R.id.circularProgressBar3)
+                circularProgressBar.visibility=View.INVISIBLE
+                val textoProgressBar = findViewById<TextView>(R.id.cargando)
+                textoProgressBar.visibility=View.INVISIBLE
                 if(it.estatus=="Credenciales exitosas"){
                     isloged=true
                     val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
@@ -123,7 +131,6 @@ class MainActivity : AppCompatActivity() {
                     editor.putBoolean("log",isloged)
                     editor.commit()
                     alerta("Aviso",it.estatus.toString(),"ok", isloged!!)
-
                 }
                 alerta("Aviso",it.estatus.toString(),"ok", isloged!!)
             }
@@ -139,6 +146,15 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(recEstado: Bundle) {
         super.onRestoreInstanceState(recEstado)
         isloged = recEstado.getBoolean("variable")
+    }
+
+
+    fun cargarcirculo(){
+        val builder = AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.load, null)
+        builder.setView(view)
+        dialogx=builder.create()
+        dialogx.show()
     }
 
 }
