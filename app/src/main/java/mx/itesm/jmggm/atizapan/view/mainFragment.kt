@@ -8,10 +8,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.fragment.findNavController
+import mx.itesm.jmggm.atizapan.BottomMenu
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
@@ -90,32 +93,32 @@ class mainFragment : Fragment() {
 
 
     private fun registrarEventos() {
-
-       /* println("variable antes de binding${isloged}")
-        checkLog2.isLoged.observe(viewLifecycleOwner){
-            isloged=it
-            println("Prueba Lo que sea${isloged}")
-        }*/
         binding.btnPolice.setOnClickListener {
             if (ISLOGED){
                 val accion = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Policia")
                 findNavController().navigate(accion)
             }
-            else {}
+            else {
+                alerta2("IMPORTANTE!!","No es posible acceder a la funcionalidades de solicitar servicio sin antes registrarse.","Prefiero registrarme","ok")
+            }
         }
         binding.btnFire.setOnClickListener {
             if(ISLOGED){
                 val accion2 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Bomberos")
                 findNavController().navigate(accion2)
             }
-            else{}
+            else{
+                alerta2("IMPORTANTE!!","No es posible acceder a la funcionalidades de solicitar servicio sin antes registrarse.","Prefiero registrarme","ok")
+            }
         }
         binding.btnHealth.setOnClickListener {
             if(ISLOGED){
                 val accion3 = mainFragmentDirections.actionMainFragmentToAlertMapFragment("Ambulancia")
                 findNavController().navigate(accion3)
             }
-            else{}
+            else{
+                alerta2("IMPORTANTE!!","No es posible acceder a la funcionalidades de solicitar servicio sin antes registrarse.","Prefiero registrarme","ok")
+            }
         }
 
         binding.btnClima.setOnClickListener {
@@ -144,15 +147,25 @@ class mainFragment : Fragment() {
         }
     }
 
-    /*override fun onSaveInstanceState(guardarEstado: Bundle) {
-        super.onSaveInstanceState(guardarEstado)
-        guardarEstado.putBoolean("variable", isloged!!)
+    private fun alerta2(titulo:String,mensaje:String,button:String,button2: String){
+        val dialog = AlertDialog.Builder(this)
+            .setTitle(titulo)
+            .setMessage(mensaje)
+            .setNegativeButton(button) { view, _ ->
+                view.dismiss()
+                val accion=mainFragmentDirections.actionMainFragmentToSignIn()
+                findNavController().navigate(accion)
+
+            }
+            .setPositiveButton(button2) { view, _ ->
+                view.dismiss()
+
+            }
+            .setCancelable(false)
+            .create()
+
+        dialog.show()
+
     }
-
-    override fun onRestoreInstanceState(recEstado: Bundle) {
-        super.onRestoreInstanceState(recEstado)
-        isloged = recEstado.getBoolean("variable")
-    }*/
-
 }
 
