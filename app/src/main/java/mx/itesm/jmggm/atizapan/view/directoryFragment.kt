@@ -1,18 +1,21 @@
 package mx.itesm.jmggm.atizapan.view
 
 import android.content.Intent
+import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.gms.maps.GoogleMap
 import mx.itesm.jmggm.atizapan.databinding.FragmentDirectoryBinding
 
 
-class directoryFragment : Fragment() {
+class directoryFragment : Fragment(), GoogleMap.OnMyLocationChangeListener {
     private lateinit var binding: FragmentDirectoryBinding
-
+    private lateinit var map:GoogleMap
+    private lateinit var position: Location
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,6 +34,14 @@ class directoryFragment : Fragment() {
         super.onCreate(savedInstanceState)
         binding = FragmentDirectoryBinding.inflate(layoutInflater)
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        map.setOnMyLocationChangeListener {
+            this.position=it
+            println("Cambio posicion")
+        }
     }
     private fun RegistraEventos() {
         //Bomberos
@@ -114,7 +125,15 @@ class directoryFragment : Fragment() {
             val locaintent8 = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/dir//SAPASA,+Av.+Oc%C3%A9ano+Pac%C3%ADfico+80,+Lomas+Lindas,+52947+Cd+L%C3%B3pez+Mateos,+M%C3%A9x./@19.5716095,-99.2498919,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x85d21c5855e6fb37:0x8b3addb1fdd16801!2m2!1d-99.2477209!2d19.5715632"))
             startActivity(locaintent8)
         }
+        binding.btnSolicitarBomberos.setOnClickListener {
+            println(position)
+        }
 
+    }
+    override fun onMyLocationChange(location: Location) {
+
+
+        this.position=location
     }
 
 }
