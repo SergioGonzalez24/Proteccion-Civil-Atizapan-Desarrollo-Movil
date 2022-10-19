@@ -86,9 +86,11 @@ class mainFragment : Fragment() {
                     val editor= suscribir?.edit()
                     if (editor != null) {
                         editor.putString("sus",msg)
+                        println(msg)
                     }
                     if (editor != null) {
                         editor.commit()
+                        println(msg)
                     }
                 }
                 println(msg)
