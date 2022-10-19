@@ -13,7 +13,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import mx.itesm.jmggm.atizapan.R
 import mx.itesm.jmggm.atizapan.model.Login.RetroInstance
 import mx.itesm.jmggm.atizapan.model.Login.RetroServiceInterface
@@ -44,7 +43,7 @@ class SignIn : AppCompatActivity() {
         val view = viewModel.root
 
         setContentView(view)
-        initViewModel()
+        initViewModel(){
         viewModel.buttonConfirmarregistro.setOnClickListener {
             if(viewModel.etMail.text.toString().isEmpty()||viewModel.etPassword.text.toString().isEmpty()||viewModel.etFullName.text.toString().isEmpty()||viewModel.etUsername.text.toString().isEmpty()||viewModel.etPhone.text.toString().isEmpty()) {
                 alerta("Aviso", "Ningún campo puede estar vacío","ok")

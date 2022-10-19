@@ -21,16 +21,6 @@ import retrofit2.Response
 
 class MainActivityViewModel(): ViewModel() {
 
-//    val prefe= getSharedPreferences("matriculas", Context.MODE_PRIVATE)
-//    val editor= prefe.edit()
-//    editor.putBoolean("mat", alumno?.matricula)
-//    editor.commit()
-//    activity
-//    //Otra act
-//    val prefe= getSharedPreferences("matricula", Context.MODE_PRIVATE)
-//    m=prefe.getBoolen("mat","-")
-//    println("Matricula")
-
 
     lateinit var createNewUserLiveData: MutableLiveData<UserResponse?>
     init {
