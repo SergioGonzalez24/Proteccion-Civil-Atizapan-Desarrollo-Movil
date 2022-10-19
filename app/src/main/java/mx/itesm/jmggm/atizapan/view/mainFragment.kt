@@ -68,14 +68,6 @@ class mainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
-        var isloged=prefs?.getBoolean("log",false)
-        if(isloged!!){
-            ISLOGED=true
-        }
-        else{
-            ISLOGED=false
-        }
         //Topicosuscribir
         Firebase.messaging.subscribeToTopic("alertasAtizapan")
             .addOnCompleteListener{ task ->
@@ -95,7 +87,14 @@ class mainFragment : Fragment() {
                 }
                 println(msg)
             }
-
+        val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
+        var isloged=prefs?.getBoolean("log",false)
+        if(isloged!!){
+            ISLOGED=true
+        }
+        else {
+            ISLOGED = false
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
