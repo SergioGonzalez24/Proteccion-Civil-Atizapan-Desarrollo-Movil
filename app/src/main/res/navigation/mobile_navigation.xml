@@ -25,9 +25,9 @@
 
     </fragment>
     <fragment
-        android:id="@+id/settingsFragmentt"
-        android:label="Configuraciónn"
-        tools:layout="@layout/fragment_settings" />
+        android:id="@+id/SignOut"
+        android:label="Cerrar Sesión"
+        tools:layout="@layout/fragment_sign_out" />
     <fragment
         android:id="@+id/newsFragment"
         android:name="mx.itesm.jmggm.atizapan.view.newsFragment"

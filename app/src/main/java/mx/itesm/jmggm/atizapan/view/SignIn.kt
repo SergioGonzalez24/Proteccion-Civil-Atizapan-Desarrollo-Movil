@@ -87,6 +87,24 @@ class SignIn : AppCompatActivity() {
                     if (xx?.estatus=="Contraseña Incorecta"||xx?.estatus=="Credenciales exitosas"){
                         alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
 
+                override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                    if(response.isSuccessful) {
+                        xx=response.body()
+                        if (xx?.estatus=="Contraseña Incorecta"||xx?.estatus=="Credenciales exitosas"){
+                            alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
+
+                        }
+                        else{
+
+                            val user  = UserAdd( viewModel.etMail.text.toString() ,viewModel.etFullName.text.toString(),viewModel.etPassword.text.toString(),viewModel.etUsername.text.toString(),viewModel.etPhone.text.toString())
+                            quoteViewModel.createNewUser(user)
+
+                        }
+
+                    } else {
+                        xx=null
+>>>>>>> refs/remotes/origin/pruebaNav
+
                     }
                     else{
 
