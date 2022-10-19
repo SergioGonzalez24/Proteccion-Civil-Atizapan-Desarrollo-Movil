@@ -103,7 +103,6 @@ class SignIn : AppCompatActivity() {
 
                     } else {
                         xx=null
->>>>>>> refs/remotes/origin/pruebaNav
 
                     }
                     else{
