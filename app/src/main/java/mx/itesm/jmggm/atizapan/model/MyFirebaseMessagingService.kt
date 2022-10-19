@@ -62,10 +62,10 @@ class MyFirebaseMessagingService :  FirebaseMessagingService()  {
 
     @SuppressLint("RemoteViewLayout")
     private fun getRemoteView(title: String, message: String) : RemoteViews {
-        val remoteView = RemoteViews("mx.itesm.jmggm.atizapan", R.drawable.ic_notifaction)
+        val remoteView = RemoteViews("mx.itesm.jmggm.atizapan", R.drawable.logoatiz)
         remoteView.setTextViewText(R.id.title, title)
         remoteView.setTextViewText(R.id.message, message)
-        remoteView.setImageViewResource(R.id.image, R.drawable.ic_notifaction)
+        remoteView.setImageViewResource(R.id.image, R.drawable.logoatiz)
 
         return remoteView
     }
