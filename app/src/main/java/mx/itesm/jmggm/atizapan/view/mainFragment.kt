@@ -148,7 +148,7 @@ class mainFragment : Fragment() {
     }
 
     private fun alerta2(titulo:String,mensaje:String,button:String,button2: String){
-        val dialog = AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this.requireContext())
             .setTitle(titulo)
             .setMessage(mensaje)
             .setNegativeButton(button) { view, _ ->

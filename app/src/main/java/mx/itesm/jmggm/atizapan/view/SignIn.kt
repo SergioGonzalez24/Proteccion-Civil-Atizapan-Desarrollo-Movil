@@ -79,7 +79,6 @@ class SignIn : AppCompatActivity() {
                     if(response.isSuccessful) {
                         xx=response.body()
                         if (xx?.estatus=="Contraseña Incorecta"||xx?.estatus=="Credenciales exitosas"){
-                            isLogged=true
                             alerta("Aviso","El usuario que deseas registrar ya existe","ok" )
 
                         }

@@ -43,6 +43,7 @@ class BottomMenu : AppCompatActivity() {
                 R.id.mainFragment,
                 R.id.newsFragment,
                 R.id.directoryFragment2,
+                R.id.SignOut
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -118,6 +118,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 if(it.estatus=="Credenciales exitosas"){
                     isloged=true
+
                     val prefs= getSharedPreferences("logueo", Context.MODE_PRIVATE)
                     val editor= prefs.edit()
                     editor.putBoolean("log",isloged)
