@@ -6,7 +6,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -25,16 +24,21 @@ import mx.itesm.jmggm.atizapan.model.Login.User
 import mx.itesm.jmggm.atizapan.model.Login.UserResponse
 import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
 import mx.itesm.jmggm.atizapan.databinding.ActivityLoginBinding
+import mx.itesm.jmggm.atizapan.model.Login.RetroInstance
 import mx.itesm.jmggm.atizapan.model.ReporteResponse
 import mx.itesm.jmggm.atizapan.model.ResponseClass
+import mx.itesm.jmggm.atizapan.model.RetroServiceInterface
 import mx.itesm.jmggm.atizapan.viewmodel.AlertMapVM
+import okhttp3.internal.ignoreIoExceptions
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 @SuppressLint("StaticFieldLeak")
 private lateinit var viewModel : ActivityLoginBinding
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var dialogx:AlertDialog
     private val viewmodel2: AlertMapVM by viewModels()
     private val quoteViewModel: MainActivityViewModel by viewModels()
@@ -42,10 +46,12 @@ class MainActivity : AppCompatActivity() {
     var userid: Int=1
     companion object{
         const val MY_CHANNEL_ID = "myChannel"
-        var id_alerta =1
+
         var id_noti=1
         var id_reporte= mutableListOf<ResponseClass>()
+
     }
+
 
 
 
@@ -55,10 +61,11 @@ class MainActivity : AppCompatActivity() {
         val view = viewModel.root
         setContentView(view)
         initViewModel()
+        createChannel()
 
         viewModel.buttonSignin.setOnClickListener {
             if(viewModel.etUsername.text.toString().isEmpty()||viewModel.etPassword.text.toString().isEmpty()) {
-            alerta("Aviso", "Ningún campo puede estar vacío","ok", isloged = false)
+                alerta("Aviso", "Ningún campo puede estar vacío","ok", isloged = false)
             }
             else{
                 cargarcirculo()
@@ -77,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         viewmodel2.objrespuesta.observe(this){
             id_reporte=it
         }
-
+        www()
 
 
     }
@@ -187,7 +194,7 @@ class MainActivity : AppCompatActivity() {
             val channel = NotificationChannel(
                 MY_CHANNEL_ID,
                 "MySuperChannel",
-                NotificationManager.IMPORTANCE_DEFAULT
+                NotificationManager.IMPORTANCE_HIGH
             ).apply {
                 description = "SUSCRIBETE"
             }
@@ -218,11 +225,93 @@ class MainActivity : AppCompatActivity() {
                     .bigText(Descripcion)
             )
             .setContentIntent(pendingIntent)
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
 
         with(NotificationManagerCompat.from(this)) {
             notify(id_noti, builder.build())
         }
     }
 
+
+    private fun www() {
+        val t = object : Thread() {
+            override fun run() {
+                while (!isInterrupted) {
+                    try {
+                        sleep(5000)
+                        runOnUiThread {
+                            //getAlerta()
+                            println("esta sirviendo")
+                            getReporte()
+
+                        }
+
+                    } catch (e: InterruptedException) {
+                        e.printStackTrace()
+                    }
+
+                }
+            }
+        }
+        t.start()
+
+
+    }
+
+
+
+
+
+    fun getReporte() {
+
+
+        for (i in id_reporte) {
+
+
+            var xx2: ReporteResponse?
+
+
+            val retroService =
+                RetroInstance.getRetroInstance().create(RetroServiceInterface::class.java)
+            val call = retroService.checkAlerta("api/reporte/${i.id}")
+            call.enqueue(object : Callback<ReporteResponse> {
+                override fun onFailure(call: Call<ReporteResponse>, t: Throwable) {
+                    ignoreIoExceptions { }
+                }
+
+                override fun onResponse(
+                    call: Call<ReporteResponse>,
+                    response: Response<ReporteResponse>
+                ) {
+                    if (response.isSuccessful) {
+
+                        xx2 = response.body()
+                        if(xx2?.estatus!=i.estatus){
+
+                            createSimpleNotification(
+                                "Notificacion Atizapan",
+                                "Tu reporte id:${i.id} se ha actualizado",
+                                "El estatus de tu reporte con ID:${i.id} ha cambiado de ${i.estatus?.uppercase()} a ${xx2?.estatus?.uppercase()}",
+                                id_noti
+                            )
+                            id_noti++
+                            if(xx2?.estatus=="Finalizado"){id_reporte.remove(i)}
+                            else{
+
+                                id_reporte[id_reporte.indexOf(i)].estatus=xx2?.estatus
+
+
+
+                            }
+
+                        }
+
+
+                    }
+
+                }
+            })
+
+        }
+    }
 }

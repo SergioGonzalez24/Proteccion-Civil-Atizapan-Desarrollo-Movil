@@ -16,6 +16,7 @@ import mx.itesm.jmggm.atizapan.model.APIService
 import mx.itesm.jmggm.atizapan.model.AlertDPO
 import mx.itesm.jmggm.atizapan.model.ReporteResponse
 import mx.itesm.jmggm.atizapan.model.ResponseClass
+import mx.itesm.jmggm.atizapan.view.MainActivity.Companion.id_reporte
 import okhttp3.OkHttpClient
 
 class AlertMapVM: ViewModel(){
@@ -42,6 +43,7 @@ class AlertMapVM: ViewModel(){
             override fun onResponse(call:Call<ResponseClass>, response: Response<ResponseClass>){
                  if (response.isSuccessful){
                      respuesta2 = response.body()!!
+                     id_reporte.add(respuesta2)
                      respuesta.add(respuesta2)
                      objrespuesta.value=respuesta
                      println("Coordenadas enviadas correctamente.")
@@ -54,5 +56,7 @@ class AlertMapVM: ViewModel(){
             }
         })
     }
+
+
 
 }

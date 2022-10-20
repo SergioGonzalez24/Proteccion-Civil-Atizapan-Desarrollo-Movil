@@ -2,6 +2,11 @@ package mx.itesm.jmggm.atizapan.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
+import mx.itesm.jmggm.atizapan.model.NotifAdapter
+import mx.itesm.jmggm.atizapan.model.NotificacionRespuesta
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -10,33 +15,36 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainVM:ViewModel() {
-//BORRAR
-    private val client = OkHttpClient.Builder().build()
-    val temp=MutableLiveData<Double>()
+    val nombreList=MutableLiveData<MutableList<String>>()
+    val descriptList=MutableLiveData<MutableList<String>>()
 
-    private val retrofit by lazy{
-        Retrofit.Builder()
-            .baseUrl("https://jwtauth-webapi.azurewebsites.net/api/alerta/showall")
-            .addConverterFactory(GsonConverterFactory.create())
-                //BORRAR CLIENTE
-            .client(client)
-            .build()
-    }
 
-    private val notifAPI by lazy{
-        retrofit.create(mx.itesm.jmggm.atizapan.model.APINotif::class.java)
-    }
-
-    fun conseguirDatosClima(lat:String,lon:String,exclude:String,api:String){
-        //val objQuery = DataQuery(lat,lon,exclude,api)
-//        val call =notifAPI.getNotif()
-//        val notificaciones=call.body()
+//    private val retrofit by lazy{
+//        Retrofit.Builder()
+//            .baseUrl("https://jwtauth-webapi.azurewebsites.net/")
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//    }
+//
+//    private val notifAPI by lazy{
+//        retrofit.create(mx.itesm.jmggm.atizapan.model.APINotif::class.java)
+//    }
+//
+//    fun listaNotificaciones(){
+//        val call =notifAPI.getNotif("alerta/showall")
+//        val notificaciones:NotificacionRespuesta?=call.body()
+//
+//
 //        if(call.isSuccessful){
-            //show recycler view
+//            val nombre=notificaciones?.nombre?: emptyList()
+//            nombreList.value?.clear()
+//            val descripcion=notificaciones?.descripcion?: emptyList()
+//            descriptList.value?.clear()
+//
 //        }
 //        else{
 //            //show error
 //        }
 //    }
 
-}}
+}

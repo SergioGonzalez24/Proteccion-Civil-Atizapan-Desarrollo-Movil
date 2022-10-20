@@ -28,18 +28,26 @@ import mx.itesm.jmggm.atizapan.BottomMenu
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
-import mx.itesm.jmggm.atizapan.model.ReporteResponse
 import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
 //import mx.itesm.jmggm.atizapan.mainFragmentDirections
 import mx.itesm.jmggm.atizapan.viewmodel.MainVM
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
-import mx.itesm.jmggm.atizapan.model.RetroInstance
-import mx.itesm.jmggm.atizapan.model.RetroServiceInterface
+import android.widget.LinearLayout
+import androidx.lifecycle.MutableLiveData
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import mx.itesm.jmggm.atizapan.model.*
+import mx.itesm.jmggm.atizapan.view.MainActivity.Companion.id_noti
+import mx.itesm.jmggm.atizapan.view.MainActivity.Companion.id_reporte
 import okhttp3.internal.ignoreIoExceptions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 /**
@@ -54,7 +62,12 @@ class mainFragment : Fragment() {
     private val checkLog:SignIn = SignIn()
     private val checkLog2:MainActivity = MainActivity()
     private val viewModel3 by viewModels<MainActivityViewModel>()
-    //    val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
+    private lateinit var adapter: NotifAdapter
+    private var nombreList= mutableListOf<String>()
+    private var descriptList= mutableListOf<String>()
+
+
+//        val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
 //    var isloged=prefs?.getBoolean("log",false)
     var ISLOGED:Boolean=false
     companion object{
@@ -65,18 +78,8 @@ class mainFragment : Fragment() {
     }
 
 
-    //private var temp:Double?=null
-
-    // Código para solicitar permiso de usar la ubicación
     private val CODIGO_PERMISO_GPS = 200
 
-    // Cliente proveedor de ubicación
-    //private lateinit var clienteLocalizacion: FusedLocationProviderClient
-
-    // Callback para manejar las actualizaciones de ubicación
-    //private lateinit var locationCallback: LocationCallback
-
-    // Para saber si las actualizaciones están activas entre corridas de la app
     private var actualizandoPosicion: Boolean = false
 
 
@@ -88,6 +91,8 @@ class mainFragment : Fragment() {
 
         binding=FragmentMainBinding.inflate((layoutInflater))
         return binding.root
+
+
     }
 
     override fun onStart() {
@@ -126,7 +131,7 @@ class mainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registrarEventos()
-        www()
+
     }
 
 
@@ -209,82 +214,7 @@ class mainFragment : Fragment() {
 
     }
 
-    private fun www() {
-        val t = object : Thread() {
-            override fun run() {
-                while (!isInterrupted) {
-                    try {
-                        sleep(5000)
-                        checkLog2.runOnUiThread {
-                            //getAlerta()
-                            println("esta sirviendo")
-                            //getReporte()
-
-                        }
-
-                    } catch (e: InterruptedException) {
-                        e.printStackTrace()
-                    }
-
-                }
-            }
-        }
-        t.start()
-
-
 }
 
-    fun getReporte() {
 
 
-        for (i in id_reporte) {
-
-
-            var xx2: ReporteResponse?
-
-
-            val retroService =
-                RetroInstance.getRetroInstance().create(RetroServiceInterface::class.java)
-            val call = retroService.checkAlerta("api/reporte/${i.id}")
-            call.enqueue(object : Callback<ReporteResponse> {
-                override fun onFailure(call: Call<ReporteResponse>, t: Throwable) {
-                    ignoreIoExceptions { }
-                }
-
-                override fun onResponse(
-                    call: Call<ReporteResponse>,
-                    response: Response<ReporteResponse>
-                ) {
-                    if (response.isSuccessful) {
-
-                        xx2 = response.body()
-                        if(xx2?.estatus!=i.estatus){
-
-                            checkLog2.createSimpleNotification(
-                                "Notificacion Atizapan",
-                                "Tu reporte id:${i.id} se ha actualizado",
-                                "El estatus de tu reporte con ID:${i.id} ha cambiado de ${i.estatus?.uppercase()} a ${xx2?.estatus?.uppercase()}",
-                                id_noti
-                            )
-                            id_noti++
-                            if(xx2?.estatus=="Finalizado"){id_reporte.remove(i)}
-                            else{
-
-                                id_reporte[id_reporte.indexOf(i)].estatus=xx2?.estatus
-
-
-
-                            }
-
-                        }
-
-
-                    }
-
-                }
-            })
-
-        }
-    }
-
-}
