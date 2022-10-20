@@ -125,14 +125,6 @@ class directoryFragment : Fragment() /*,GoogleMap.OnMyLocationChangeListener*/ {
             val locaintent8 = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/dir//SAPASA,+Av.+Oc%C3%A9ano+Pac%C3%ADfico+80,+Lomas+Lindas,+52947+Cd+L%C3%B3pez+Mateos,+M%C3%A9x./@19.5716095,-99.2498919,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x85d21c5855e6fb37:0x8b3addb1fdd16801!2m2!1d-99.2477209!2d19.5715632"))
             startActivity(locaintent8)
         }
-        binding.btnSolicitarBomberos.setOnClickListener {
-//            println(position)
-        }
 
     }
-//    override fun onMyLocationChange(location: Location) {
-//
-//
-//        this.position=location
-
 }

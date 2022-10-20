@@ -283,13 +283,6 @@ class mainFragment : Fragment() {
                     binding.textVieww3.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].descripcion)
                     binding.textVieww4.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].descripcion)
 
-
-
-
-
-
-
-
                 }
 
             }
