@@ -1,5 +1,6 @@
 package mx.itesm.jmggm.atizapan.viewmodel
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,12 +14,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import android.widget.Toast
 import mx.itesm.jmggm.atizapan.model.APIService
 import mx.itesm.jmggm.atizapan.model.AlertDPO
+import mx.itesm.jmggm.atizapan.model.ReporteResponse
 import mx.itesm.jmggm.atizapan.model.ResponseClass
 import okhttp3.OkHttpClient
 
 class AlertMapVM: ViewModel(){
     private val client = OkHttpClient.Builder().build()
-
+    val respuesta = mutableListOf<ResponseClass>()
+    val objrespuesta=MutableLiveData<MutableList<ResponseClass>>()
     private val retrofit by lazy{
         Retrofit.Builder()
             .baseUrl("https://jwtauth-webapi.azurewebsites.net")
@@ -33,9 +36,14 @@ class AlertMapVM: ViewModel(){
 
     fun enviarCoordenadas(user_id:Int, directorio_id:Int, order_location:String){
         val obj = AlertDPO(user_id,directorio_id, order_location,)
-        serviceAPI.postAlert(obj).enqueue(object: Callback<ResponseClass>{
+        val call = serviceAPI.postAlert(obj)
+        var respuesta2:ResponseClass
+        call.enqueue(object: Callback<ResponseClass>{
             override fun onResponse(call:Call<ResponseClass>, response: Response<ResponseClass>){
                  if (response.isSuccessful){
+                     respuesta2 = response.body()!!
+                     respuesta.add(respuesta2)
+                     objrespuesta.value=respuesta
                      println("Coordenadas enviadas correctamente.")
                  }else{
                      println("Error al enviar datos: ${response.message()}")

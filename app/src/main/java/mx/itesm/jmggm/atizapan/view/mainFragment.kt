@@ -1,8 +1,13 @@
 package mx.itesm.jmggm.atizapan.view
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +15,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.SavedStateHandle
@@ -20,9 +28,18 @@ import mx.itesm.jmggm.atizapan.BottomMenu
 //import com.google.android.gms.location.FusedLocationProviderClient
 //import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
+import mx.itesm.jmggm.atizapan.model.ReporteResponse
 import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
 //import mx.itesm.jmggm.atizapan.mainFragmentDirections
 import mx.itesm.jmggm.atizapan.viewmodel.MainVM
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+import mx.itesm.jmggm.atizapan.model.RetroInstance
+import mx.itesm.jmggm.atizapan.model.RetroServiceInterface
+import okhttp3.internal.ignoreIoExceptions
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 /**
@@ -40,6 +57,13 @@ class mainFragment : Fragment() {
     //    val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
 //    var isloged=prefs?.getBoolean("log",false)
     var ISLOGED:Boolean=false
+    companion object{
+        const val MY_CHANNEL_ID = "myChannel"
+        var id_alerta =1
+        var id_noti=1
+        var id_reporte= mutableListOf<ReporteResponse>()
+    }
+
 
     //private var temp:Double?=null
 
@@ -68,6 +92,7 @@ class mainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        println("prueba")
         //Topicosuscribir
         Firebase.messaging.subscribeToTopic("alertasAtizapan")
             .addOnCompleteListener{ task ->
@@ -95,11 +120,13 @@ class mainFragment : Fragment() {
         else {
             ISLOGED = false
         }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registrarEventos()
+        www()
     }
 
 
@@ -180,6 +207,84 @@ class mainFragment : Fragment() {
         dialog.show()
 
 
+    }
+
+    private fun www() {
+        val t = object : Thread() {
+            override fun run() {
+                while (!isInterrupted) {
+                    try {
+                        sleep(5000)
+                        checkLog2.runOnUiThread {
+                            //getAlerta()
+                            println("esta sirviendo")
+                            //getReporte()
+
+                        }
+
+                    } catch (e: InterruptedException) {
+                        e.printStackTrace()
+                    }
+
+                }
+            }
+        }
+        t.start()
+
+
+}
+
+    fun getReporte() {
+
+
+        for (i in id_reporte) {
+
+
+            var xx2: ReporteResponse?
+
+
+            val retroService =
+                RetroInstance.getRetroInstance().create(RetroServiceInterface::class.java)
+            val call = retroService.checkAlerta("api/reporte/${i.id}")
+            call.enqueue(object : Callback<ReporteResponse> {
+                override fun onFailure(call: Call<ReporteResponse>, t: Throwable) {
+                    ignoreIoExceptions { }
+                }
+
+                override fun onResponse(
+                    call: Call<ReporteResponse>,
+                    response: Response<ReporteResponse>
+                ) {
+                    if (response.isSuccessful) {
+
+                        xx2 = response.body()
+                        if(xx2?.estatus!=i.estatus){
+
+                            checkLog2.createSimpleNotification(
+                                "Notificacion Atizapan",
+                                "Tu reporte id:${i.id} se ha actualizado",
+                                "El estatus de tu reporte con ID:${i.id} ha cambiado de ${i.estatus?.uppercase()} a ${xx2?.estatus?.uppercase()}",
+                                id_noti
+                            )
+                            id_noti++
+                            if(xx2?.estatus=="Finalizado"){id_reporte.remove(i)}
+                            else{
+
+                                id_reporte[id_reporte.indexOf(i)].estatus=xx2?.estatus
+
+
+
+                            }
+
+                        }
+
+
+                    }
+
+                }
+            })
+
+        }
     }
 
 }

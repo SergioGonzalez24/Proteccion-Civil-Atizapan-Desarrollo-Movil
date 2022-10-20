@@ -1,6 +1,7 @@
 package mx.itesm.jmggm.atizapan.view
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ import mx.itesm.jmggm.atizapan.viewmodel.AlertMapVM
 class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyLocationButtonClickListener,
     GoogleMap.OnMyLocationChangeListener, GoogleMap.OnMyLocationClickListener{
     private lateinit var position: Location
+    private var userid:Int=1
     private lateinit var binding:ActivityAlertMapFragmentBinding
     private val args:AlertMapFragmentArgs by navArgs()
     private lateinit var map:GoogleMap
@@ -56,9 +58,10 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         super.onCreate(savedInstanceState)
         binding=ActivityAlertMapFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(R.layout.activity_alert_map_fragment)
         ocultarImg()
         createMapFragment()
+        val prefs=getSharedPreferences("usuario", Context.MODE_PRIVATE)
+        userid=prefs.getInt("user",0)
         registrarEventos()
 
     }
@@ -69,18 +72,18 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
                 val user:Int=1000
                 val tipoAlerta=args.tipoAlerta
                 if(tipoAlerta=="Policia"){
-                    viewmodel.enviarCoordenadas(100,5,"${position.latitude},${position.longitude}")
+                    viewmodel.enviarCoordenadas(userid,5,"${position.latitude},${position.longitude}")
                     Toast.makeText(this,
                         "Coordenadas ${position.latitude},${position.longitude} enviadas",
                         Toast.LENGTH_SHORT).show()
 
                 } else if(tipoAlerta=="Bomberos"){
-                    viewmodel.enviarCoordenadas(100,2,"${position.latitude},${position.longitude}")
+                    viewmodel.enviarCoordenadas(userid,2,"${position.latitude},${position.longitude}")
                     Toast.makeText(this,
                         "Coordenadas ${position.latitude},${position.longitude} enviadas",
                         Toast.LENGTH_SHORT).show()
                 } else{
-                    viewmodel.enviarCoordenadas(100,3,"${position.latitude},${position.longitude}")
+                    viewmodel.enviarCoordenadas(userid,3,"${position.latitude},${position.longitude}")
                     Toast.makeText(this,
                         "Coordenadas ${position.latitude},${position.longitude} enviadas",
                         Toast.LENGTH_SHORT).show()
@@ -173,7 +176,6 @@ class AlertMapFragment : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
     }
 
     override fun onMyLocationChange(location: Location) {
-        println("Hola")
 
         this.position=location
     }
