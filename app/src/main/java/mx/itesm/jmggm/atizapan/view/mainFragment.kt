@@ -71,7 +71,7 @@ class mainFragment : Fragment() {
     private var descriptList= mutableListOf<String>()
 
 
-//        val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
+    //        val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
 //    var isloged=prefs?.getBoolean("log",false)
     var ISLOGED:Boolean=false
     companion object{
@@ -261,44 +261,41 @@ class mainFragment : Fragment() {
 
 
 
-            val retroService =
-                RetroInstance.getRetroInstance().create(RetroServiceInterfaceAlerta::class.java)
-            val call = retroService.Alertas("api/alerta/showall")
-            call.enqueue(object : Callback<alertaResponse> {
-                override fun onFailure(call: Call<alertaResponse>, t: Throwable) {
-                    ignoreIoExceptions { }
-                }
+        val retroService =
+            RetroInstance.getRetroInstance().create(RetroServiceInterfaceAlerta::class.java)
+        val call = retroService.Alertas("api/alerta/showall")
+        call.enqueue(object : Callback<alertaResponse> {
+            override fun onFailure(call: Call<alertaResponse>, t: Throwable) {
+                ignoreIoExceptions { }
+            }
 
-                override fun onResponse(
-                    call: Call<alertaResponse>,
-                    response: Response<alertaResponse>
-                ) {
-                    if (response.isSuccessful) {
+            override fun onResponse(
+                call: Call<alertaResponse>,
+                response: Response<alertaResponse>
+            ) {
+                if (response.isSuccessful) {
 
-                        conjuntoAlertas=response.body()!!.alertas
-
-
-                        binding.textVieww1.setText("* Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].nombre+ System.getProperty ("line.separator") + "* Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].order_date+ System.getProperty ("line.separator")+"* Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].descripcion)
-                        binding.textVieww2.setText("* Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].nombre+ System.getProperty ("line.separator") + "* Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].order_date+ System.getProperty ("line.separator")+"* Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].descripcion)
-                        binding.textVieww3.setText("* Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].nombre+ System.getProperty ("line.separator") + "* Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].order_date+ System.getProperty ("line.separator")+"* Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].descripcion)
-                        binding.textVieww4.setText("* Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].nombre+ System.getProperty ("line.separator") + "* Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].order_date+ System.getProperty ("line.separator")+"* Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].descripcion)
+                    conjuntoAlertas=response.body()!!.alertas
 
 
+                    binding.textVieww1.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].descripcion)
+                    binding.textVieww2.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].descripcion)
+                    binding.textVieww3.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].descripcion)
+                    binding.textVieww4.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-4].descripcion)
 
 
 
 
 
 
-                    }
+
 
                 }
-            })
 
-        }
+            }
+        })
+
+    }
 
 
 }
-
-
-

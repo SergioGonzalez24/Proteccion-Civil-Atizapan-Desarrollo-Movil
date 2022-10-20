@@ -20,6 +20,6 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this, BottomMenu::class.java)
             startActivity(intent)
             finish()
-        },2000)
+        },5000)
     }
 }
