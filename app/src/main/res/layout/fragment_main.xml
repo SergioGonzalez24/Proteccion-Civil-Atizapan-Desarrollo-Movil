@@ -66,15 +66,53 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <TextView
+            android:id="@+id/textView18"
             android:layout_width="match_parent"
-            android:layout_height="189dp"
-            android:src="@drawable/atizazul" />
+            android:layout_height="42dp"
+            android:text="Últimas Notificaciones"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textColorHint="#A92323"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:translationY="6dp" />
+
+        <TextView
+            android:id="@+id/textVieww1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andada"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textVieww2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andada"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textVieww3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andada"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textVieww4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andada"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="66dp" />
+            android:layout_height="14dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -110,6 +148,14 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/btnEmergencia"
             android:layout_width="match_parent"
@@ -133,9 +179,9 @@
             android:id="@+id/btnServicios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/Negro"
             android:backgroundTint="@color/Azulclarito"
-            android:text="Servicios Proteccion Civil" />
+            android:text="Servicios Proteccion Civil"
+            android:textColor="@color/Negro" />
 
     </LinearLayout>
 

@@ -39,7 +39,10 @@
     <string name="todok">TODO</string>
     <string name="todooo">TODO</string>
 
+    <string name="sample_string"><![CDATA[some test line 1 <br />some test line 2]]></string>
 
+
+    Fuente: https://www.iteramos.com/pregunta/25639/como-anadir-un-salto-de-linea-en-un-android-textview
     <string name="dialog_one_style_title">Registro</string>
     <string name="one_style_title_dialog_tv">Registro</string>
     <string name="title_activity_mapa_servicios">mapaServicios</string>

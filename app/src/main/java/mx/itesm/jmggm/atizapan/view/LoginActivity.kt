@@ -84,6 +84,11 @@ class MainActivity : AppCompatActivity() {
         viewmodel2.objrespuesta.observe(this){
             id_reporte=it
         }
+        viewModel.regresar2.setOnClickListener{
+
+            val x:Intent= Intent(this, BottomMenu::class.java)
+            startActivity(x)
+        }
         www()
 
 
