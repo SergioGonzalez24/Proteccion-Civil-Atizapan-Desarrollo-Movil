@@ -3,9 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_directory.xml" value="0.25" />
-        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/fragment_sign_out.xml" value="0.25" />
+        <entry key="..\:/DesarrolloMovil/Proteccion-Civil-Atizapan-Desarrollo-Movil/app/src/main/res/layout/activity_login.xml" value="0.33958333333333335" />
       </map>
     </option>
   </component>
