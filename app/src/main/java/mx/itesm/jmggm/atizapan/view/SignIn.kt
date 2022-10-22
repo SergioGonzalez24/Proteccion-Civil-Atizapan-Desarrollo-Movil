@@ -28,7 +28,18 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/*create a user in the database, but before we have to check if the user exists, if it
+does not exist, we create it, if it exists, we show an alert. */
 @SuppressLint("StaticFieldLeak")
 private lateinit var viewModel : ActivitySignInBinding
 
@@ -64,8 +75,6 @@ class SignIn : AppCompatActivity() {
             startActivity(x)
         }
     }
-
-
 
 
     private fun createUserAdd() {
@@ -106,6 +115,35 @@ class SignIn : AppCompatActivity() {
 
 
 
+/**
+ * It creates an alert dialog with a title, message, and button.
+ * 
+ * The function takes three parameters:
+ * 
+ * * titulo: The title of the dialog
+ * * mensaje: The message of the dialog
+ * * button: The text of the button
+ * 
+ * The function creates an AlertDialog object and sets the title, message, and button.
+ * 
+ * The function then shows the dialog.
+ * 
+ * The function is called from the onCreate() method:
+ * 
+ *     alerta("Alerta","Esto es una alerta","Aceptar")
+ * 
+ * The function is called with the title, message, and button text.
+ * 
+ * The result is an alert dialog with the title, message, and button text.
+ * 
+ * ![alt text][logo]
+ * 
+ * [logo]: https://i.stack.imgur
+ * 
+ * @param titulo The title of the alert
+ * @param mensaje The message you want to display.
+ * @param button The text that will be displayed on the button.
+ */
     private fun alerta(titulo:String,mensaje:String,button:String) {
         val dialog = AlertDialog.Builder(this)
             .setTitle(titulo)
@@ -156,6 +194,9 @@ class SignIn : AppCompatActivity() {
 
 
 
+/**
+ * It creates a dialog with a circular progress bar
+ */
     fun cargarcirculo(){
         val builder = AlertDialog.Builder(this)
         val view = layoutInflater.inflate(R.layout.load, null)

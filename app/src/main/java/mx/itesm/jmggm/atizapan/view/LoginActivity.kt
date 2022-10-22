@@ -34,7 +34,20 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/*Make a notification system that checks if the status of a report has changed, if it
+has, it sends a notification to the user and chech if the user exists or not. */
+</code>
+ */
 @SuppressLint("StaticFieldLeak")
 private lateinit var viewModel : ActivityLoginBinding
 
@@ -55,6 +68,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
+   /**
+    * A function that is called when the activity is created.
+    * 
+    * @param savedInstanceState A Bundle object containing the activity's previously saved state.
+    */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ActivityLoginBinding.inflate(layoutInflater)
@@ -96,6 +114,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
+   /**
+    * It creates a dialog box with a title, message, button, and a boolean value. If the boolean value
+    * is true, it will open a new activity
+    * 
+    * @param titulo The title of the alert
+    * @param mensaje The message you want to display.
+    * @param button The text that will be displayed on the button.
+    * @param isloged Boolean
+    */
     private fun alerta(titulo:String,mensaje:String,button:String, isloged: Boolean){
         val dialog = AlertDialog.Builder(this)
             .setTitle(titulo)
@@ -115,6 +142,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * It creates a dialog with a title, message, and two buttons. The first button dismisses the
+     * dialog, and the second button dismisses the dialog.
+     * 
+     * @param titulo The title of the dialog
+     * @param mensaje The message you want to display.
+     * @param button The text that will be displayed on the negative button.
+     * @param button2 String = "Cancelar"
+     */
     private fun alerta2(titulo:String,mensaje:String,button:String,button2: String){
         val dialog = AlertDialog.Builder(this)
             .setTitle(titulo)
@@ -135,12 +171,21 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+ /**
+  * The function creates a new user with the username and password from the text fields and then calls
+  * the createNewUser function from the viewModel
+  */
     private fun createUser() {
         val user  = User( viewModel.etUsername.text.toString() , viewModel.etPassword.text.toString())
         quoteViewModel.createNewUser(user)
 
     }
 
+   /**
+    * make a progress bar visible while the app is waiting for the response from the
+    * server, and then make it invisible when the response is received.
+
+    */
     private fun initViewModel() {
         quoteViewModel.getCreateNewUserObserver().observe(this, Observer <UserResponse?>{
             if(it  == null) {
@@ -175,6 +220,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * It saves the state of the variable isloged.
+     * 
+     * @param guardarEstado Bundle
+     */
     override fun onSaveInstanceState(guardarEstado: Bundle) {
         super.onSaveInstanceState(guardarEstado)
         guardarEstado.putBoolean("variable", isloged!!)
@@ -186,6 +236,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+   /**
+    * It creates a dialog with a circular progress bar.
+    */
     fun cargarcirculo(){
         val builder = AlertDialog.Builder(this)
         val view = layoutInflater.inflate(R.layout.load, null)
@@ -194,6 +247,10 @@ class MainActivity : AppCompatActivity() {
         dialogx.show()
     }
 
+/**
+ * If the device is running Android 8.0 or higher, create a notification channel with the specified ID,
+ * name, and importance
+ */
     fun createChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
@@ -212,6 +269,15 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+  /**
+   * It creates a notification with a title, a context, a description and an id.
+   * 
+   * @param Titulo Title of the notification
+   * @param Contex The text that appears in the notification bar.
+   * @param Descripcion The text that will be displayed in the notification.
+   * @param id_noti This is the notification ID. You can use this to update or cancel the notification
+   * later.
+   */
     fun createSimpleNotification(Titulo:String,Contex:String,Descripcion:String,id_noti:Int) {
 
         val intent = Intent(this, MainActivity::class.java).apply {
@@ -238,6 +304,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+/**
+ * It's a function that creates a thread that runs every 5 seconds and calls the getReporte() function.
+ */
     private fun www() {
         val t = object : Thread() {
             override fun run() {
@@ -267,6 +336,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
+   /**
+    * It checks if the status of a report has changed, if it has, it creates a notification.
+    */
     fun getReporte() {
 
 

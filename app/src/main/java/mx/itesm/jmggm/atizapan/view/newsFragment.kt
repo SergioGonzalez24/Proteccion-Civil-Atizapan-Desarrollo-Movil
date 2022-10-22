@@ -9,7 +9,17 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import mx.itesm.jmggm.atizapan.R
 
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/* A fragment that loads a web page in a webview. */
 class newsFragment : Fragment() {
 
     override fun onCreateView(

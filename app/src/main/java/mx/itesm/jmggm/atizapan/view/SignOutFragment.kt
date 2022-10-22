@@ -10,7 +10,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import mx.itesm.jmggm.atizapan.R
 import mx.itesm.jmggm.atizapan.databinding.FragmentSignOutBinding
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/* make a logout button that changes a boolean value in shared preferences to false */
 class SignOutFragment : Fragment() {
     private lateinit var binding:FragmentSignOutBinding
     var isloged:Boolean=false

@@ -25,11 +25,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.ktx.messaging
 import mx.itesm.jmggm.atizapan.BottomMenu
-//import com.google.android.gms.location.FusedLocationProviderClient
-//import com.google.android.gms.location.LocationCallback
 import mx.itesm.jmggm.atizapan.databinding.FragmentMainBinding
 import mx.itesm.jmggm.atizapan.viewmodel.MainActivityViewModel
-//import mx.itesm.jmggm.atizapan.mainFragmentDirections
 import mx.itesm.jmggm.atizapan.viewmodel.MainVM
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
@@ -55,12 +52,19 @@ import java.util.Collections.list
 
 
 /**
- * A simple [Fragment] subclass.
- * Use the [mainFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
+
  */
+/* get the data from the API and show it in the textViews is the main screen*/
 class mainFragment : Fragment() {
 
+   /* A declaration of variables. */
     private val viewModel:MainVM by viewModels()
     private lateinit var binding: FragmentMainBinding
     private val checkLog:SignIn = SignIn()
@@ -71,8 +75,7 @@ class mainFragment : Fragment() {
     private var descriptList= mutableListOf<String>()
 
 
-    //        val prefs=activity?.getSharedPreferences("logueo", Context.MODE_PRIVATE)
-//    var isloged=prefs?.getBoolean("log",false)
+/* A declaration of variables. */
     var ISLOGED:Boolean=false
     companion object{
         const val MY_CHANNEL_ID = "myChannel"
@@ -84,11 +87,31 @@ class mainFragment : Fragment() {
     }
 
 
+/* A code for the GPS. */
     private val CODIGO_PERMISO_GPS = 200
 
     private var actualizandoPosicion: Boolean = false
 
 
+/**
+ * Override fun onCreateView(
+ *         inflater: LayoutInflater, container: ViewGroup?,
+ *         savedInstanceState: Bundle?
+ * 
+ *     ): View? {
+ * 
+ *         binding=FragmentMainBinding.inflate((layoutInflater))
+ *         return binding.root
+ * 
+ * 
+ * 
+ *     }
+ * 
+ * @param inflater The LayoutInflater object that can be used to inflate any views in the fragment,
+ * @param container The ViewGroup into which the fragment should be placed.
+ * @param savedInstanceState Bundle?
+ * @return The root of the binding object.
+ */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -102,6 +125,9 @@ class mainFragment : Fragment() {
 
     }
 
+/**
+ * I'm trying to get the value of a variable from a sharedpreferences file, but it's not working.
+ */
     override fun onStart() {
         super.onStart()
         println("prueba")
@@ -146,6 +172,9 @@ class mainFragment : Fragment() {
 
 
 
+    /**
+     * It's a function that registers the events of the buttons in the main screen of the application
+     */
     private fun registrarEventos() {
         binding.btnPolice.setOnClickListener {
             if (ISLOGED){
@@ -204,6 +233,15 @@ class mainFragment : Fragment() {
         }
     }
 
+   /**
+    * It creates a dialog with two buttons, one of them closes the dialog and the other one closes the
+    * dialog and navigates to another fragment.
+    * 
+    * @param titulo Title of the alert
+    * @param mensaje String
+    * @param button String
+    * @param button2 String
+    */
     private fun alerta2(titulo:String,mensaje:String,button:String,button2: String){
         val dialog = AlertDialog.Builder(this.requireContext())
             .setTitle(titulo)
@@ -227,6 +265,19 @@ class mainFragment : Fragment() {
     }
 
 
+    /**
+     * It's a function that runs a thread that runs a function that runs a thread that runs a function
+     * that runs a thread that runs a function that runs a thread that runs a function that runs a
+     * thread that runs a function that runs a thread that runs a function that runs a thread that runs
+     * a function that runs a thread that runs a function that runs a thread that runs a function that
+     * runs a thread that runs a function that runs a thread that runs a function that runs a thread
+     * that runs a function that runs a thread that runs a function that runs a thread that runs a
+     * function that runs a thread that runs a function that runs a thread that runs a function that
+     * runs a thread that runs a function that runs a thread that runs a function that runs a thread
+     * that runs a function that runs a thread that runs a function that runs a thread that runs a
+     * function that runs a thread that runs a function that runs a thread that runs a function that
+     * runs a thread that runs a
+     */
     private fun www() {
         val t = object : Thread() {
             override fun run() {
@@ -234,10 +285,7 @@ class mainFragment : Fragment() {
                     try {
                         sleep(5000)
                         checkLog2.runOnUiThread {
-                            //getAlerta()
-                            //println("esta sirviendoooo")
                             getReporte()
-
 
                         }
 
@@ -254,12 +302,10 @@ class mainFragment : Fragment() {
     }
 
 
+    /**
+     *  get the last 4 elements of an array and put them in a textview.
+     */
     fun getReporte() {
-
-
-
-
-
 
         val retroService =
             RetroInstance.getRetroInstance().create(RetroServiceInterfaceAlerta::class.java)
@@ -274,10 +320,7 @@ class mainFragment : Fragment() {
                 response: Response<alertaResponse>
             ) {
                 if (response.isSuccessful) {
-
                     conjuntoAlertas=response.body()!!.alertas
-
-
                     binding.textVieww1.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-1].descripcion)
                     binding.textVieww2.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-2].descripcion)
                     binding.textVieww3.setText(" Tipo:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].nombre+ System.getProperty ("line.separator") + " Fecha:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].order_date+ System.getProperty ("line.separator")+" Descripción:  "+ conjuntoAlertas[conjuntoAlertas.count()-3].descripcion)

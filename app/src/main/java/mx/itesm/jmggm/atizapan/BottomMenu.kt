@@ -12,7 +12,19 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.tasks.Task
 import com.google.firebase.messaging.FirebaseMessaging
 import mx.itesm.jmggm.atizapan.databinding.ActivityBottomMenuBinding
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/* This class is the main activity of the app, it's the activity that is launched when the app is
+opened. It contains a bottom navigation bar that allows the user to navigate between the different
+fragments of the app */
 class BottomMenu : AppCompatActivity() {
 
     private lateinit var binding: ActivityBottomMenuBinding

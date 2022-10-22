@@ -12,9 +12,24 @@ import org.json.JSONObject
 import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/* It fetches weather data from the OpenWeatherMap API and displays it in the UI. */
 class ClimaActivity : AppCompatActivity() {
 
+/**
+ * It creates a new instance of the WeatherTask class and executes it.
+ * 
+ * @param savedInstanceState This is the saved state of the activity from the previous instance.
+ */
     val CITY: String = "Ciudad López Mateos"
     val API: String = "68b800823cf8c5d32ecea64627e8c994" // Use your own API key
 
@@ -25,6 +40,9 @@ class ClimaActivity : AppCompatActivity() {
 
     }
 
+/* The above class is an inner class of the MainActivity class. It extends the AsyncTask class. It
+overrides the onPreExecute() method. It makes the ProgressBar visible and the mainContainer and
+errorText invisible. */
     inner class weatherTask() : AsyncTask<String, Void, String>() {
         override fun onPreExecute() {
             super.onPreExecute()

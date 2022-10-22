@@ -16,11 +16,21 @@ import com.google.firebase.messaging.RemoteMessage
 import com.google.firebase.messaging.ktx.messaging
 import mx.itesm.jmggm.atizapan.BottomMenu
 import mx.itesm.jmggm.atizapan.R
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
 const val CHANNEL_ID = "NOTIFICATION_CHANNEL"
 const val  CHANNEL_NAME = "mx.itesm.jmggm.atizapan"
 
 
+/* A class that extends the FirebaseMessagingService class and is used to generate notifications. */
 class MyFirebaseMessagingService :  FirebaseMessagingService()  {
 
     //Generar notificacion

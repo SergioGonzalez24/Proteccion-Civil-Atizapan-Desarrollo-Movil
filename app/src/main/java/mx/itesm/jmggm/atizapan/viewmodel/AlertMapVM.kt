@@ -9,8 +9,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
-//import mx.itesm.ag.navegacionstreaming.CostoViewModel
 import android.widget.Toast
 import mx.itesm.jmggm.atizapan.model.APIService
 import mx.itesm.jmggm.atizapan.model.AlertDPO
@@ -18,7 +16,18 @@ import mx.itesm.jmggm.atizapan.model.ReporteResponse
 import mx.itesm.jmggm.atizapan.model.ResponseClass
 import mx.itesm.jmggm.atizapan.view.MainActivity.Companion.id_reporte
 import okhttp3.OkHttpClient
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/* It sends a POST request to the server with the user's location and returns a response with the ID of
+the report. */
 class AlertMapVM: ViewModel(){
     private val client = OkHttpClient.Builder().build()
     val respuesta = mutableListOf<ResponseClass>()

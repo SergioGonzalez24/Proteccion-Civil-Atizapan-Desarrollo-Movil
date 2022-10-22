@@ -11,7 +11,17 @@ import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.GoogleMap
 import mx.itesm.jmggm.atizapan.databinding.FragmentDirectoryBinding
 
+/**
+ * @author
+Sergio Manuel Gonzalez Vargas - A01745446
+Gilberto André García Gaytán - A01753176
+Jose Miguel Garcia Gurtubay Moreno - A01373750
+Josue Bernanrdo Villegas Nuño - A01751694
+Fernando Ortiz Saldaña - A01376737
+Favio Mariano Dileva Charles - A01745465
 
+ */
+/* A fragment that contains a list of emergency numbers and their respective locations. */
 class directoryFragment : Fragment() /*,GoogleMap.OnMyLocationChangeListener*/ {
     private lateinit var binding: FragmentDirectoryBinding
     /*private lateinit var map:GoogleMap
@@ -36,13 +46,6 @@ class directoryFragment : Fragment() /*,GoogleMap.OnMyLocationChangeListener*/ {
 
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        map.setOnMyLocationChangeListener {
-//            this.position=it
-//            println("Cambio posicion")
-//        }
-//    }
     private fun RegistraEventos() {
         //Bomberos
         binding.llamaBomberos.setOnClickListener {
