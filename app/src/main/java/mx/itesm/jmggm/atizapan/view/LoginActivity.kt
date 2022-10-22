@@ -46,8 +46,6 @@ Favio Mariano Dileva Charles - A01745465
  */
 /*Make a notification system that checks if the status of a report has changed, if it
 has, it sends a notification to the user and chech if the user exists or not. */
-</code>
- */
 @SuppressLint("StaticFieldLeak")
 private lateinit var viewModel : ActivityLoginBinding
 
